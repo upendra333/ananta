@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Last-Mile Delivery - ANANTA MOBILITY</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/lmd.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- ========================================
+         1. NAVIGATION (Top of page)
+         ======================================== -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">
+                    <img src="assets/logos/ananta-logo.svg" alt="ANANTA MOBILITY Logo">
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link nav-home">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="retail.html" class="nav-link nav-retail">Retail</a>
+                </li>
+                <li class="nav-item">
+                    <a href="lmd.html" class="nav-link nav-lmd active">Last-Mile Delivery</a>
+                </li>
+                <li class="nav-item">
+                    <a href="about.html" class="nav-link nav-about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="contact.html" class="nav-link nav-contact">Contact</a>
+                </li>
+            </ul>
+            <div class="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ========================================
+         2. STICKY CTAs (Fixed position)
+         ======================================== -->
+    <div class="sticky-ctas">
+        <div class="cta-main-btn" id="ctaToggle">
+            <i class="fas fa-phone"></i>
+        </div>
+        <div class="cta-options" id="ctaOptions">
+            <a href="contact.html?reason=sales" class="cta-btn primary">Talk to Sales</a>
+            <a href="contact.html?reason=lmd" class="cta-btn secondary">Get LMD Quote</a>
+        </div>
+    </div>
+
+    <!-- ========================================
+         3. MAIN CONTENT CONTAINER
+         ======================================== -->
+    <main class="seamless-content">
+        <!-- ========================================
+             4. HERO SECTION (First visible content)
+             ======================================== -->
+        <section class="hero-section">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">Last-Mile Delivery</h1>
+                    <p class="hero-subtitle">Scale your delivery operations with our Rider Network and EV Fleet</p>
+                    <div class="hero-buttons">
+                        <a href="contact.html?reason=lmd" class="btn btn-primary">Partner with us</a>
+                        <a href="#partnerships" class="btn btn-secondary">Ride with us</a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <img src="assets/Illustrations/lmd/LMD-group.png" alt="LMD Operations" class="hero-image">
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================
+             5. CONTENT BLOCKS (Main page content)
+             ======================================== -->
+        
+        <!-- Key Partnerships -->
+        <section class="partnerships-section">
+            <div class="partnerships-wrapper">
+                <div class="partnerships-text">
+                    <h2>Our Key Partnerships</h2>
+                    <p>We've established strong partnerships with leading e-commerce platforms to provide comprehensive last-mile delivery solutions across India.</p>
+                    <ul class="feature-list">
+                        <li>Bigbasket - Andhra Pradesh & Telangana operations</li>
+                        <li>Flipkart - Pan-India delivery support</li>
+                        <li>100+ delivery riders across partnerships</li>
+                        <li>99.5% delivery success rate</li>
+                    </ul>
+                </div>
+                <div class="partnerships-visual">
+                    <img src="assets/Illustrations/lmd/delivery-1.png" alt="Key Partnerships" class="partnerships-image">
+                </div>
+            </div>
+        </section>
+
+        <!-- Rider Management -->
+        <section class="rider-management-section">
+            <div class="rider-management-wrapper">
+                <div class="rider-management-text">
+                    <h2>Rider Hiring & Deployment</h2>
+                    <p>Complete rider management solution from recruitment to deployment. Our comprehensive approach ensures you get reliable, trained delivery professionals.</p>
+                    <ul class="feature-list">
+                        <li>Background verification & screening</li>
+                        <li>Comprehensive onboarding process</li>
+                        <li>Training & certification programs</li>
+                        <li>Performance monitoring & support</li>
+                    </ul>
+                </div>
+                <div class="rider-management-visual">
+                    <img src="assets/Illustrations/lmd/delivery-2.png" alt="Rider Management" class="rider-management-image">
+                </div>
+            </div>
+        </section>
+
+        <!-- EV Fleet Rentals -->
+        <section class="ev-fleet-section">
+            <div class="ev-fleet-wrapper">
+                <div class="ev-fleet-text">
+                    <h2>EV Fleet Rentals</h2>
+                    <p>Flexible electric vehicle rental options for delivery operations. Choose from our range of 2W and 3W vehicles with comprehensive maintenance support.</p>
+                    <ul class="feature-list">
+                        <li>2W & 3W electric vehicles</li>
+                        <li>Daily/Weekly/Monthly rental plans</li>
+                        <li>Maintenance & servicing included</li>
+                        <li>Quick replacement service</li>
+                    </ul>
+                </div>
+                <div class="ev-fleet-visual">
+                    <img src="assets/Illustrations/lmd/Fleet.png" alt="EV Fleet" class="ev-fleet-image">
+                </div>
+            </div>
+        </section>
+
+        <!-- Fleet Operations -->
+        <section class="fleet-operations-section">
+            <div class="fleet-operations-wrapper">
+                <div class="fleet-operations-text">
+                    <h2>Fleet Operations & SLAs</h2>
+                    <p>Professional fleet management with guaranteed service levels. We ensure your delivery operations run smoothly with real-time monitoring and support.</p>
+                    <ul class="feature-list">
+                        <li>99% uptime guarantee</li>
+                        <li>Real-time tracking & monitoring</li>
+                        <li>Performance reporting & analytics</li>
+                        <li>SLA compliance monitoring</li>
+                    </ul>
+                </div>
+                <div class="fleet-operations-visual">
+                    <img src="assets/Illustrations/lmd/lmd-truck.png" alt="Fleet Operations" class="fleet-operations-image">
+                </div>
+            </div>
+        </section>
+
+        <!-- Coverage & Scale -->
+        <section class="coverage-section">
+            <div class="coverage-wrapper">
+                <div class="coverage-text">
+                    <h2>Coverage & Scale</h2>
+                    <p>Our extensive network spans across India with strong presence in Andhra Pradesh and Telangana, supported by pan-India coverage through partner networks.</p>
+                    <div class="coverage-stats">
+                        <div class="stat-item">
+                            <div class="stat-number">100+</div>
+                            <div class="stat-label">Cities Covered</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">500+</div>
+                            <div class="stat-label">Active Riders</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">250+</div>
+                            <div class="stat-label">EV Fleet</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">99.5%</div>
+                            <div class="stat-label">Success Rate</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="coverage-visual">
+                    <img src="assets/Illustrations/lmd/lmd-auto.png" alt="Coverage Map" class="coverage-image">
+                </div>
+            </div>
+        </section>
+
+        <!-- Success Story -->
+        <section class="success-story-section">
+            <div class="success-story-wrapper">
+                <div class="success-story-text">
+                    <h2>Success Story</h2>
+                    <h3>Bigbasket Partnership Success</h3>
+                    <p>Our partnership with Bigbasket has resulted in significant improvements in delivery efficiency and customer satisfaction across Andhra Pradesh and Telangana.</p>
+                    <div class="success-metrics">
+                        <div class="metric">
+                            <div class="metric-value">40%</div>
+                            <div class="metric-label">Reduction in delivery time</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">99.5%</div>
+                            <div class="metric-label">Delivery success rate</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">60%</div>
+                            <div class="metric-label">Cost savings</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="success-story-visual">
+                    <img src="assets/Illustrations/lmd/income.png" alt="Success Story" class="success-story-image">
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================
+             6. CTA SECTION (Pre-footer section)
+             ======================================== -->
+        <section class="cta-section">
+            <div class="cta-content">
+                <h2>Ready to Scale Your Delivery Operations?</h2>
+                <p>Experience efficient last-mile delivery with our comprehensive LMD solutions</p>
+                <div class="cta-buttons">
+                    <a href="contact.html?reason=lmd" class="btn btn-primary btn-large">Get LMD Quote</a>
+                    <a href="contact.html?reason=sales" class="btn btn-outline btn-large">Talk to Sales</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ========================================
+         7. FOOTER (Bottom of page)
+         ======================================== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>ANANTA MOBILITY</h3>
+                    <p>Scale LMD with riders + EV rentals, backed by SLAs and real-time support.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="retail.html">Retail</a></li>
+                        <li><a href="lmd.html">Last-Mile Delivery</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#terms">Terms</a></li>
+                        <li><a href="#privacy">Privacy</a></li>
+                        <li><a href="contact.html?reason=careers">Careers</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 EVZIP Mobility Pvt. Ltd. | ISO 9001:2015 Certified | Startup India Recognised</p>
+                <p>Designed and Developed by <a href="https://www.ardnepu.com" target="_blank">ardnepu</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ========================================
+         JAVASCRIPT FUNCTIONALITY
+         ======================================== -->
+    <script src="js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // CTA Button Toggle
+            const ctaToggle = document.getElementById('ctaToggle');
+            const stickyCtas = document.querySelector('.sticky-ctas');
+            
+            if (ctaToggle && stickyCtas) {
+                ctaToggle.addEventListener('click', function() {
+                    stickyCtas.classList.toggle('active');
+                });
+                
+                document.addEventListener('click', function(event) {
+                    if (!stickyCtas.contains(event.target)) {
+                        stickyCtas.classList.remove('active');
+                    }
+                });
+            }
+            
+            // Mobile Navigation Toggle
+            const navToggle = document.querySelector('.nav-toggle');
+            const navMenu = document.querySelector('.nav-menu');
+            
+            if (navToggle && navMenu) {
+                let isMenuOpen = false;
+                
+                function applyMobileStyles() {
+                    if (window.innerWidth <= 768) {
+                        navMenu.style.cssText = `
+                            position: fixed !important;
+                            top: 80px !important;
+                            right: 20px !important;
+                            width: 160px !important;
+                            height: 0rem !important;
+                            background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 250, 252, 0.95) 100%) !important;
+                            flex-direction: column !important;
+                            justify-content: flex-start !important;
+                            align-items: stretch !important;
+                            transition: opacity 0.3s ease, transform 0.3s ease !important;
+                            z-index: 1000 !important;
+                            backdrop-filter: blur(12px) !important;
+                            display: flex !important;
+                            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12), 0 2px 8px rgba(0, 0, 0, 0.08) !important;
+                            padding: 0.2rem 0 !important;
+                            margin: 0 !important;
+                            border-radius: 12px !important;
+                            border: 1px solid rgba(255, 255, 255, 0.2) !important;
+                            opacity: 0 !important;
+                            transform: translateY(-10px) !important;
+                        `;
+                        isMenuOpen = false;
+                    } else {
+                        navMenu.style.cssText = `
+                            position: static !important;
+                            top: auto !important;
+                            left: auto !important;
+                            width: auto !important;
+                            height: auto !important;
+                            background: transparent !important;
+                            flex-direction: row !important;
+                            justify-content: flex-end !important;
+                            align-items: center !important;
+                            transition: none !important;
+                            z-index: auto !important;
+                            backdrop-filter: none !important;
+                            display: flex !important;
+                            box-shadow: none !important;
+                            padding: 0 !important;
+                            margin: 0 !important;
+                        `;
+                        isMenuOpen = false;
+                    }
+                }
+                
+                applyMobileStyles();
+                window.addEventListener('resize', applyMobileStyles);
+                
+                navToggle.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    
+                    if (window.innerWidth <= 768) {
+                        if (isMenuOpen) {
+                            navMenu.classList.remove('active');
+                            navMenu.style.opacity = '0';
+                            navMenu.style.transform = 'translateY(-10px)';
+                            navToggle.classList.remove('active');
+                            isMenuOpen = false;
+                        } else {
+                            navMenu.classList.add('active');
+                            navMenu.style.opacity = '1';
+                            navMenu.style.transform = 'translateY(0)';
+                            navToggle.classList.add('active');
+                            isMenuOpen = true;
+                            
+                            navMenu.style.cssText = `
+                                position: fixed !important;
+                                top: 80px !important;
+                                right: 20px !important;
+                                width: 160px !important;
+                                height: auto !important;
+                                background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 250, 252, 0.95) 100%) !important;
+                                flex-direction: column !important;
+                                justify-content: flex-start !important;
+                                align-items: stretch !important;
+                                transition: opacity 0.3s ease, transform 0.3s ease !important;
+                                z-index: 1000 !important;
+                                backdrop-filter: blur(12px) !important;
+                                display: flex !important;
+                                box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12), 0 2px 8px rgba(0, 0, 0, 0.08) !important;
+                                padding: 0.2rem 0 !important;
+                                margin: 0 !important;
+                                border-radius: 12px !important;
+                                border: 1px solid rgba(255, 255, 255, 0.2) !important;
+                                opacity: 1 !important;
+                                transform: translateY(0) !important;
+                            `;
+                        }
+                    }
+                });
+                
+                // Close menu on link click
+                const navLinks = document.querySelectorAll('.nav-link');
+                navLinks.forEach(link => {
+                    link.addEventListener('click', function() {
+                        navToggle.classList.remove('active');
+                        navMenu.classList.remove('active');
+                        navMenu.style.opacity = '0';
+                        navMenu.style.transform = 'translateY(-10px)';
+                        isMenuOpen = false;
+                    });
+                });
+                
+                // Close menu on outside click
+                document.addEventListener('click', function(event) {
+                    if (!navToggle.contains(event.target) && !navMenu.contains(event.target)) {
+                        navToggle.classList.remove('active');
+                        navMenu.classList.remove('active');
+                        navMenu.style.opacity = '0';
+                        navMenu.style.transform = 'translateY(-10px)';
+                        isMenuOpen = false;
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

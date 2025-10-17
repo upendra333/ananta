@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retail - ANANTA MOBILITY</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/retail.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- ========================================
+         1. NAVIGATION (Top of page)
+         ======================================== -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">
+                    <img src="assets/logos/ananta-logo.svg" alt="ANANTA MOBILITY Logo">
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link nav-home">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="retail.html" class="nav-link nav-retail active">Retail</a>
+                </li>
+                <li class="nav-item">
+                    <a href="lmd.html" class="nav-link nav-lmd">Last-Mile Delivery</a>
+                </li>
+                <li class="nav-item">
+                    <a href="about.html" class="nav-link nav-about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="contact.html" class="nav-link nav-contact">Contact</a>
+                </li>
+            </ul>
+            <div class="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ========================================
+         2. STICKY CTAs (Fixed position)
+         ======================================== -->
+    <div class="sticky-ctas">
+        <div class="cta-main-btn" id="ctaToggle">
+            <i class="fas fa-phone"></i>
+        </div>
+        <div class="cta-options" id="ctaOptions">
+            <a href="contact.html?reason=sales" class="cta-btn primary">Talk to Sales</a>
+            <a href="contact.html?reason=service" class="cta-btn secondary">Book a Service</a>
+        </div>
+    </div>
+
+    <!-- ========================================
+         3. MAIN CONTENT CONTAINER
+         ======================================== -->
+    <main class="seamless-content">
+        <!-- ========================================
+             4. HERO SECTION (First visible content)
+             ======================================== -->
+        <section class="hero-section">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">Sales | Service | Spares</h1>
+                    <p class="hero-subtitle">Your complete EV-Experience partner</p>
+                    <div class="hero-buttons">
+                        <a href="contact.html?reason=test-ride" class="btn btn-primary">Book Test-Ride</a>
+                        <a href="contact.html?reason=quote" class="btn btn-secondary">Request Quote</a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <img src="assets/Illustrations/retail/retail sales.png" alt="Retail Sales" class="hero-image">
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================
+             5. MULTI-BRAND SHOWROOMS SECTION
+             ======================================== -->
+        <section class="multi-brand-section">
+            <div class="multi-brand-wrapper">
+                <div class="multi-brand-text">
+                    <h2>Multi-Brand Showrooms</h2>
+                    <p>Experience the widest selection of electric vehicles from leading brands under one roof. Our multi-brand showrooms offer everything from 2-wheelers to 3-wheelers, ensuring you find the perfect EV for your needs.</p>
+                    <ul class="feature-list">
+                        <li>Latest models from top brands</li>
+                        <li>Competitive pricing and offers</li>
+                        <li>Expert consultation and guidance</li>
+                        <li>Test ride facilities</li>
+                    </ul>
+                </div>
+                <div class="multi-brand-visual">
+                    <img src="assets/Illustrations/retail/sales-lineup.png" alt="Multi-Brand Showroom" class="multi-brand-image">
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================
+             6. DEDICATED SHOWROOMS SECTION
+             ======================================== -->
+        <section class="dedicated-showrooms-section">
+            <div class="dedicated-showrooms-wrapper">
+                <div class="dedicated-showrooms-text">
+                    <h2>Dedicated Brand Showrooms</h2>
+                    <p>Step into our dedicated showrooms designed to factory standards. Each location is equipped with trained technicians, genuine spares, and comprehensive service facilities.</p>
+                    <ul class="feature-list">
+                        <li>Factory-standard showroom design</li>
+                        <li>Trained technicians and staff</li>
+                        <li>Genuine spare parts inventory</li>
+                        <li>Comprehensive service facilities</li>
+                    </ul>
+                </div>
+                <div class="dedicated-showrooms-visual">
+                    <img src="assets/Illustrations/retail/showroom.png" alt="Dedicated Showroom" class="dedicated-showrooms-image">
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================
+             7. AFTER-SALES SERVICE SECTION
+             ======================================== -->
+        <section class="after-sales-section">
+            <div class="after-sales-wrapper">
+                <div class="after-sales-text">
+                    <h2>Professional After-Sales Service</h2>
+                    <p>Our certified technicians provide comprehensive maintenance and support for your EV investment. With standardized processes and clear SLAs, we ensure your vehicle performs at its best.</p>
+                    <ul class="feature-list">
+                        <li>Trained technicians & standardized processes</li>
+                        <li>Warranty-based services</li>
+                        <li>Customer support</li>
+                        <li>Quick turnaround times</li>
+                    </ul>
+                </div>
+                <div class="after-sales-visual">
+                    <img src="assets/Illustrations/retail/service-1.png" alt="After-Sales Service" class="after-sales-image">
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================
+             8. GENUINE SPARES SECTION
+             ======================================== -->
+        <section class="genuine-spares-section">
+            <div class="genuine-spares-wrapper">
+                <div class="genuine-spares-text">
+                    <h2>Genuine Spares & Parts</h2>
+                    <p>Keep your EV running smoothly with our comprehensive range of genuine spare parts and components. Quality assurance and quick availability ensure minimal downtime.</p>
+                    <ul class="feature-list">
+                        <li>Original spare parts for all brands</li>
+                        <li>Quality assurance and warranty</li>
+                        <li>Quick availability and delivery</li>
+                        <li>Competitive pricing</li>
+                    </ul>
+                </div>
+                <div class="genuine-spares-visual">
+                    <img src="assets/Illustrations/retail/Genuine spares.png" alt="Genuine Spares" class="genuine-spares-image">
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================
+             9. TRANSPARENT PRICING SECTION
+             ======================================== -->
+        <section class="transparent-pricing-section">
+            <div class="transparent-pricing-wrapper">
+                <div class="transparent-pricing-text">
+                    <h2>Transparent Pricing</h2>
+                    <p>No hidden costs or surprises. We believe in clear, upfront pricing for all our services, spares, and vehicles. What you see is what you pay.</p>
+                    <ul class="feature-list">
+                        <li>Clear pricing for all services</li>
+                        <li>No hidden costs or fees</li>
+                        <li>Competitive market rates</li>
+                        <li>Flexible payment options</li>
+                    </ul>
+                </div>
+                <div class="transparent-pricing-visual">
+                    <img src="assets/Illustrations/retail/Transparent pricing.png" alt="Transparent Pricing" class="transparent-pricing-image">
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================
+             10. END-TO-END SUPPORT SECTION
+             ======================================== -->
+        <section class="end-to-end-support-section">
+            <div class="end-to-end-support-wrapper">
+                <div class="end-to-end-support-text">
+                    <h2>End-to-End Support</h2>
+                    <p>From initial consultation to ongoing support, we provide comprehensive assistance throughout your EV ownership journey. Our trained technicians and standardized processes ensure consistent quality.</p>
+                    <ul class="feature-list">
+                        <li>Trained technicians & standardized processes</li>
+                        <li>Genuine spares and clear SLAs</li>
+                        <li>Responsive customer support</li>
+                        <li>Transparent pricing</li>
+                    </ul>
+                </div>
+                <div class="end-to-end-support-visual">
+                    <img src="assets/Illustrations/retail/End to end support.png" alt="End-to-End Support" class="end-to-end-support-image">
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================
+             11. FINANCE ASSISTANCE SECTION
+             ======================================== -->
+        <section class="finance-assistance-section">
+            <div class="finance-assistance-wrapper">
+                <div class="finance-assistance-text">
+                    <h2>Finance Assistance</h2>
+                    <p>Make EV ownership accessible with our flexible financing options. We work with leading financial institutions to offer competitive EMI plans and loan facilities.</p>
+                    <ul class="feature-list">
+                        <li>Flexible EMI options</li>
+                        <li>Competitive interest rates</li>
+                        <li>Quick loan approval</li>
+                        <li>Multiple payment plans</li>
+                    </ul>
+                </div>
+                <div class="finance-assistance-visual">
+                    <img src="assets/Illustrations/retail/Finance assistance.png" alt="Finance Assistance" class="finance-assistance-image">
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================
+             12. BRANDS SECTION (Mid-page section)
+             ======================================== -->
+        <section class="brands-section">
+            <div class="brands-content">
+                <h2>Our Brand Partnerships</h2>
+                <div class="brands-grid">
+                    <div class="brand-card">
+                        <h3>Hestur</h3>
+                        <p class="brand-tag">Exclusive — Andhra Pradesh</p>
+                        <p>Ananta is the exclusive Master Franchise holder for Andhra Pradesh for the brand Hestur. We operate a dedicated Hestur showroom in Guntur for sales & service—built to factory standards, stocked with genuine spares, and run by trained technicians.</p>
+                        <div class="brand-gallery">
+                            <img src="assets/Illustrations/retail/sales-lineup1.png" alt="Hestur Sales">
+                            <img src="assets/Illustrations/retail/service-2.png" alt="Hestur Service">
+                        </div>
+                    </div>
+                    <div class="brand-card">
+                        <h3>Bikewoo</h3>
+                        <p class="brand-tag">Multi-brand EV Showrooms</p>
+                        <p>Ananta has partnered with Bikewoo, India's multi-brand EV showroom network, to bring you a curated line-up of reliable electric two-wheelers—across price points and use cases.</p>
+                        <div class="brand-gallery">
+                            <img src="assets/Illustrations/retail/customer-1.png" alt="Bikewoo Customer">
+                            <img src="assets/Illustrations/retail/individual-01.png" alt="Bikewoo Individual">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================
+             13. CTA SECTION (Pre-footer section)
+             ======================================== -->
+        <section class="cta-section">
+            <div class="cta-content">
+                <h2>Ready to Go Electric?</h2>
+                <p>Experience the future of mobility with our comprehensive EV solutions</p>
+                <div class="cta-buttons">
+                    <a href="contact.html?reason=sales" class="btn btn-primary btn-large">Talk to Sales</a>
+                    <a href="contact.html?reason=service" class="btn btn-outline btn-large">Book Service</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ========================================
+         14. FOOTER (Bottom of page)
+         ======================================== -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <div class="footer-logo">
+                    <img src="assets/logos/ananta-logo.svg" alt="ANANTA MOBILITY Logo">
+                </div>
+                <p>Multi-brand EVs, genuine spare parts, after-sales and Last-mile deliveries all under one roof</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <div class="quick-links-grid">
+                    <div class="quick-links-column">
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="retail.html">Retail</a></li>
+                            <li><a href="lmd.html">Last-Mile Delivery</a></li>
+                            <li><a href="about.html">About</a></li>
+                        </ul>
+                    </div>
+                    <div class="quick-links-column">
+                        <ul>
+                            <li><a href="#blog">Blog</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                            <li><a href="#terms">Terms</a></li>
+                            <li><a href="#privacy">Privacy</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>Contact Info</h4>
+                <div class="contact-info">
+                    <p><i class="fas fa-phone"></i> +91 98765 43210</p>
+                    <p><i class="fas fa-envelope"></i> info@anantamobility.com</p>
+                </div>
+                <div class="social-icons">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 EVZIP Mobility Pvt. Ltd. | ISO 9001:2015 Certified | Startup India Recognised</p>
+            <p>Designed and Developed by <a href="https://www.ardnepu.com" target="_blank">ardnepu</a></p>
+        </div>
+    </footer>
+
+    <!-- ========================================
+         JAVASCRIPT FUNCTIONALITY
+         ======================================== -->
+    <script src="js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // CTA Button Toggle
+            const ctaToggle = document.getElementById('ctaToggle');
+            const stickyCtas = document.querySelector('.sticky-ctas');
+            
+            if (ctaToggle && stickyCtas) {
+                ctaToggle.addEventListener('click', function() {
+                    stickyCtas.classList.toggle('active');
+                });
+                
+                document.addEventListener('click', function(event) {
+                    if (!stickyCtas.contains(event.target)) {
+                        stickyCtas.classList.remove('active');
+                    }
+                });
+            }
+            
+            // Mobile Navigation Toggle
+            const navToggle = document.querySelector('.nav-toggle');
+            const navMenu = document.querySelector('.nav-menu');
+            
+            if (navToggle && navMenu) {
+                let isMenuOpen = false;
+                
+                function applyMobileStyles() {
+                    if (window.innerWidth <= 768) {
+                        navMenu.style.cssText = `
+                            position: fixed !important;
+                            top: 80px !important;
+                            right: 20px !important;
+                            width: 160px !important;
+                            height: 0rem !important;
+                            background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 250, 252, 0.95) 100%) !important;
+                            flex-direction: column !important;
+                            justify-content: flex-start !important;
+                            align-items: stretch !important;
+                            transition: opacity 0.3s ease, transform 0.3s ease !important;
+                            z-index: 1000 !important;
+                            backdrop-filter: blur(12px) !important;
+                            display: flex !important;
+                            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12), 0 2px 8px rgba(0, 0, 0, 0.08) !important;
+                            padding: 0.2rem 0 !important;
+                            margin: 0 !important;
+                            border-radius: 12px !important;
+                            border: 1px solid rgba(255, 255, 255, 0.2) !important;
+                            opacity: 0 !important;
+                            transform: translateY(-10px) !important;
+                        `;
+                        isMenuOpen = false;
+                    } else {
+                        navMenu.style.cssText = `
+                            position: static !important;
+                            top: auto !important;
+                            left: auto !important;
+                            width: auto !important;
+                            height: auto !important;
+                            background: transparent !important;
+                            flex-direction: row !important;
+                            justify-content: flex-end !important;
+                            align-items: center !important;
+                            transition: none !important;
+                            z-index: auto !important;
+                            backdrop-filter: none !important;
+                            display: flex !important;
+                            box-shadow: none !important;
+                            padding: 0 !important;
+                            margin: 0 !important;
+                        `;
+                        isMenuOpen = false;
+                    }
+                }
+                
+                applyMobileStyles();
+                window.addEventListener('resize', applyMobileStyles);
+                
+                navToggle.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    
+                    if (window.innerWidth <= 768) {
+                        if (isMenuOpen) {
+                            navMenu.classList.remove('active');
+                            navMenu.style.opacity = '0';
+                            navMenu.style.transform = 'translateY(-10px)';
+                            navToggle.classList.remove('active');
+                            isMenuOpen = false;
+                        } else {
+                            navMenu.classList.add('active');
+                            navMenu.style.opacity = '1';
+                            navMenu.style.transform = 'translateY(0)';
+                            navToggle.classList.add('active');
+                            isMenuOpen = true;
+                            
+                            navMenu.style.cssText = `
+                                position: fixed !important;
+                                top: 80px !important;
+                                right: 20px !important;
+                                width: 160px !important;
+                                height: auto !important;
+                                background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 250, 252, 0.95) 100%) !important;
+                                flex-direction: column !important;
+                                justify-content: flex-start !important;
+                                align-items: stretch !important;
+                                transition: opacity 0.3s ease, transform 0.3s ease !important;
+                                z-index: 1000 !important;
+                                backdrop-filter: blur(12px) !important;
+                                display: flex !important;
+                                box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12), 0 2px 8px rgba(0, 0, 0, 0.08) !important;
+                                padding: 0.2rem 0 !important;
+                                margin: 0 !important;
+                                border-radius: 12px !important;
+                                border: 1px solid rgba(255, 255, 255, 0.2) !important;
+                                opacity: 1 !important;
+                                transform: translateY(0) !important;
+                            `;
+                        }
+                    }
+                });
+                
+                // Close menu on link click
+                const navLinks = document.querySelectorAll('.nav-link');
+                navLinks.forEach(link => {
+                    link.addEventListener('click', function() {
+                        navToggle.classList.remove('active');
+                        navMenu.classList.remove('active');
+                        navMenu.style.opacity = '0';
+                        navMenu.style.transform = 'translateY(-10px)';
+                        isMenuOpen = false;
+                    });
+                });
+                
+                // Close menu on outside click
+                document.addEventListener('click', function(event) {
+                    if (!navToggle.contains(event.target) && !navMenu.contains(event.target)) {
+                        navToggle.classList.remove('active');
+                        navMenu.classList.remove('active');
+                        navMenu.style.opacity = '0';
+                        navMenu.style.transform = 'translateY(-10px)';
+                        isMenuOpen = false;
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

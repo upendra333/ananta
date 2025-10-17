@@ -1,0 +1,737 @@
+/* Home Page Specific Styles - Organized by Page Order */
+
+/* ========================================
+   NAVIGATION & HEADER
+   ======================================== */
+
+/* Center logo on home page */
+body.home .nav-container {
+    justify-content: center;
+}
+
+/* Hide navigation links only on home page */
+body.home .nav-menu {
+    display: none;
+}
+
+/* Remove header shadow for uniform look */
+.navbar {
+    box-shadow: none;
+    padding-top: 80px;
+}
+
+/* Scale up logo */
+.nav-logo img {
+    height: 180px;
+    width: auto;
+}
+
+/* ========================================
+   STICKY CTAs
+   ======================================== */
+
+.sticky-ctas {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 999;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: flex-end;
+    gap: 10px;
+    opacity: 0;
+    animation: revealStickyCTA 0.8s ease-out 10.5s forwards;
+}
+
+.cta-main-btn {
+    width: 60px;
+    height: 60px;
+    background: #32CD32;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(50, 205, 50, 0.3);
+}
+
+.cta-main-btn:hover {
+    background: #228B22;
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(50, 205, 50, 0.4);
+}
+
+.cta-main-btn i {
+    color: white;
+    font-size: 1.2rem;
+}
+
+.cta-options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    opacity: 0;
+    transform: translateY(20px) scale(0.8);
+    transition: all 0.3s ease;
+    pointer-events: none;
+    margin-bottom: 10px;
+}
+
+.sticky-ctas:hover .cta-options,
+.sticky-ctas.active .cta-options {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    pointer-events: all;
+}
+
+.cta-btn {
+    padding: 8px 16px;
+    text-decoration: none;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    text-align: center;
+    min-width: 120px;
+    white-space: nowrap;
+}
+
+.cta-btn.primary {
+    background: #32CD32;
+    color: white;
+}
+
+.cta-btn.secondary {
+    background: #3B82F6;
+    color: white;
+}
+
+.cta-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* ========================================
+   HERO SECTION
+   ======================================== */
+
+/* Hero Section Container */
+.hero {
+    background: #FFFFFF;
+    color: #000000;
+    padding: 120px 0 0px;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.25rem;
+}
+
+.hero-content {
+    margin-top: 0rem;
+}
+
+/* ========================================
+   HERO IMAGES & ROAD LINES
+   ======================================== */
+
+.hero-images {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: -1rem;
+    margin-bottom: 1.5rem;
+    margin-top: 4rem;
+    position: relative;
+    z-index: 1001;
+}
+
+.videos-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.hero-image-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hero-illustration {
+    max-width: 100%;
+    height: auto;
+    max-height: 300px;
+    object-fit: contain;
+}
+
+/* Video styling to match images */
+video.hero-illustration {
+    max-width: 100%;
+    height: auto;
+    max-height: 300px;
+    object-fit: contain;
+    border-radius: 8px;
+    display: block;
+}
+
+/* Flip second video (customer01) horizontally */
+.hero-image-container:last-child video.hero-illustration {
+    transform: scaleX(-1);
+}
+
+/* Ensure videos are visible */
+.hero-image-container video {
+    display: block;
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Road Lines */
+.road-lines {
+    width: 100%;
+    height: 40px;
+    position: relative;
+    margin-top: 0px;
+    overflow: hidden;
+    mask: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
+    -webkit-mask: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
+    clear: both;
+}
+
+.road-lines.extended {
+    width: 100%;
+    max-width: 800px;
+    margin: -10px auto 0 auto;
+    display: block;
+}
+
+.road-lines::before {
+    content: '';
+    position: absolute;
+    top: 10%;
+    left: -50px;
+    width: calc(100% + 100px);
+    height: 8px;
+    background: repeating-linear-gradient(
+        to right,
+        #333 0px,
+        #333 30px,
+        transparent 30px,
+        transparent 60px
+    );
+    transform: translateY(-50%);
+    background-size: 60px 5px;
+}
+
+.road-lines {
+    opacity: 0;
+    animation: dissolveIn 0.8s ease-out 5s forwards;
+}
+
+.road-lines.extended::before {
+    animation: roadMoveRight 1s linear infinite;
+}
+
+/* ========================================
+   HERO CONTENT
+   ======================================== */
+
+/* Hero Title */
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    line-height: 1.1;
+    color: #32CD32;
+}
+
+.hero-title .highlight-text {
+    color: #3B82F6;
+}
+
+/* Hero Subtitle */
+.hero-subtitle {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 2.5rem;
+    color: #666666;
+}
+
+/* Hero Description */
+.hero-description {
+    font-size: 0.5rem;
+    margin-bottom: 1.5rem;
+    color: #666666;
+    line-height: 1.6;
+}
+
+/* ========================================
+   HERO BUTTONS
+   ======================================== */
+
+.hero-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 0rem;
+}
+
+.hero-buttons-row {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.hero-buttons .btn {
+    border-radius: 50px;
+    width: 190px;
+    text-align: center;
+}
+
+.hero-buttons-row:first-child .btn {
+    width: 350px;
+}
+
+.hero-buttons .btn-primary {
+    background: #32CD32;
+    color: white;
+    border: none;
+}
+
+.hero-buttons .btn-primary:hover {
+    background: #1d971d;
+    transform: translateY(-2px);
+}
+
+.hero-buttons .btn-secondary {
+    background: #32CD32;
+    color: white;
+    border: none;
+}
+
+.hero-buttons .btn-secondary:hover {
+    background: #1d971d;
+    transform: translateY(-2px);
+}
+
+.hero-buttons .btn-outline {
+    background: #3B82F6;
+    color: white;
+    border: none;
+}
+
+.hero-buttons .btn-outline:hover {
+    background: #2266d3;
+    transform: translateY(-2px);
+}
+
+.hero-buttons .btn:nth-child(4) {
+    background: #3B82F6;
+    color: white;
+    border: none;
+}
+
+.hero-buttons .btn:nth-child(4):hover {
+    background: #2266d3;
+    transform: translateY(-2px);
+}
+
+/* ========================================
+   HERO FOOTER
+   ======================================== */
+
+.hero-footer {
+    margin-top: 3.5rem;
+    text-align: center;
+    opacity: 0;
+    animation: revealFooter 0.8s ease-out 7s forwards;
+}
+
+.hero-footer p {
+    margin: 0.5rem 0;
+    font-size: 0.9rem;
+    color: #666666;
+    line-height: 1.4;
+}
+
+.hero-footer a {
+    color: #3B82F6;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.hero-footer a:hover {
+    color: #228B22;
+    text-decoration: underline;
+}
+
+/* ========================================
+   SEQUENTIAL ANIMATIONS
+   ======================================== */
+
+/* Logo Animation */
+.nav-logo {
+    opacity: 0;
+    animation: logoSequence 6s ease-out forwards;
+}
+
+/* Hero Images Animation */
+.hero-images {
+    opacity: 0;
+    animation: revealImages 0.8s ease-out 5s forwards;
+}
+
+.hero-image-container:first-child {
+    opacity: 0;
+    animation: dissolveIn 0.8s ease-out 5s forwards;
+}
+
+.hero-image-container:last-child {
+    opacity: 0;
+    animation: dissolveIn 0.8s ease-out 5s forwards;
+}
+
+/* Content Animations */
+.hero-title {
+    opacity: 0;
+    animation: revealTitle 0.8s ease-out 5.5s forwards;
+}
+
+.hero-subtitle {
+    opacity: 0;
+    animation: revealSubtitle 0.8s ease-out 6s forwards;
+}
+
+.hero-description {
+    display: none;
+}
+
+.hero-buttons {
+    opacity: 0;
+    animation: revealButtons 0.8s ease-out 6.5s forwards;
+    margin-top: 2rem;
+}
+
+/* ========================================
+   KEYFRAME ANIMATIONS
+   ======================================== */
+
+/* Logo Sequence */
+@keyframes logoSequence {
+    0% {
+        opacity: 0;
+        transform: translateY(300px);
+    }
+    16.67% {
+        opacity: 0.7;
+        transform: translateY(300px);
+    }
+    50% {
+        opacity: 1;
+        transform: translateY(300px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(-50px);
+    }
+}
+
+/* Image Reveal */
+@keyframes revealImages {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Dissolve In Animation */
+@keyframes dissolveIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Content Reveal Animations */
+@keyframes revealTitle {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes revealSubtitle {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+@keyframes revealButtons {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes revealFooter {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes revealStickyCTA {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Vehicle Bounce Animations */
+/* Vehicle Bounce Keyframes - Removed */
+
+/* Road Line Animations */
+@keyframes roadMoveLeft {
+    0% {
+        transform: translateY(-50%) translateX(-60px);
+    }
+    100% {
+        transform: translateY(-50%) translateX(0px);
+    }
+}
+
+@keyframes roadMoveRight {
+    0% {
+        transform: translateY(-50%) translateX(0px);
+    }
+    100% {
+        transform: translateY(-50%) translateX(-60px);
+    }
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+
+/* Title and subtitle responsive behavior */
+.mobile-title,
+.mobile-subtitle {
+    display: none;
+}
+
+@media (max-width: 480px) {
+    .desktop-title,
+    .desktop-subtitle {
+        display: none;
+    }
+    
+    .mobile-title,
+    .mobile-subtitle {
+    display: block;
+    }
+}
+
+/* Mobile logo scaling */
+@media (max-width: 768px) {
+    .nav-logo img {
+        height: 120px;
+        width: auto;
+    }
+    
+    .navbar {
+        padding-top: 70px;
+    }
+    
+    .hero {
+        padding: 80px 0 0px;
+    }
+    
+    .sticky-ctas {
+        position: fixed !important;
+        bottom: 20px !important;
+        right: 20px !important;
+        flex-direction: column-reverse !important;
+        align-items: flex-end !important;
+        gap: 10px !important;
+        z-index: 999 !important;
+        display: flex !important;
+    }
+    
+    .cta-main-btn {
+    width: 50px;
+    height: 50px;
+    }
+    
+    .cta-main-btn i {
+        font-size: 1rem;
+    }
+    
+    .cta-options {
+        flex-direction: column;
+        margin-bottom: 10px;
+    }
+    
+    .cta-btn {
+        font-size: 0.8rem;
+        padding: 6px 12px;
+        min-width: 100px;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-container {
+        gap: 1.5rem;
+    }
+
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.4rem;
+    }
+
+    .hero-illustration {
+        max-height: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.2rem;
+    }
+
+    .hero-images {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .videos-container {
+        flex-direction: row;
+        gap: 1rem;
+    }
+
+    .hero-illustration {
+        max-width: 150px;
+        max-height: 250px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        gap: 0.75rem;
+        align-items: center;
+    }
+
+    .hero-buttons-row {
+        flex-direction: column;
+        gap: 0.75rem;
+        align-items: center;
+    }
+
+    .hero-buttons .btn {
+        width: 200px;
+        min-width: 200px;
+        text-align: center;
+        border-radius: 20px;
+    }
+    
+    .hero-buttons-row:first-child .btn {
+        width: 200px;
+    }
+    
+    .hero-images {
+        margin-bottom: 0.25rem;
+    }
+    
+    .hero-content {
+        margin-top: -0.50rem;
+    }
+    
+    .road-lines {
+        width: 150px;
+        height: 30px;
+    }
+    
+    .road-lines::before {
+        height: 4px;
+    }
+    
+    .hero-footer {
+        margin-top: 2rem;
+    }
+    
+    .hero-footer p {
+        font-size: 0.8rem;
+    }
+}
+
+/* ========================================
+   FOOTER RESPONSIVE STYLES
+   ======================================== */
+
+/* Desktop: Show as single line */
+.hero-footer .footer-line1::after {
+    content: " | ";
+}
+
+.hero-footer .footer-line2 {
+    display: inline !important;
+}
+
+/* ========================================
+   UTILITIES
+   ======================================== */
+
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}

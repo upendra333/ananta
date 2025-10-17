@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ANANTA MOBILITY - Electric Mobility Made Simple</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/home.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="home">
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="assets/logos/ananta-logo.svg" alt="ANANTA MOBILITY Logo">
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link active">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="retail.html" class="nav-link">Retail</a>
+                </li>
+                <li class="nav-item">
+                    <a href="lmd.html" class="nav-link">Rentals & Deliveries</a>
+                </li>
+                <li class="nav-item">
+                    <a href="about.html" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </li>
+            </ul>
+            <div class="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sticky CTAs -->
+    <div class="sticky-ctas">
+        <div class="cta-main-btn" id="ctaToggle">
+            <i class="fas fa-phone"></i>
+        </div>
+        <div class="cta-options" id="ctaOptions">
+            <a href="retail.html" class="cta-btn primary">Talk to Sales</a>
+            <a href="lmd.html" class="cta-btn secondary">Ride & Earn</a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-images">
+                <div class="videos-container">
+                    <div class="hero-image-container">
+                        <video autoplay muted loop playsinline class="hero-illustration" preload="auto">
+                            <source src="assets/animated/rider03.mp4" type="video/mp4">
+                    <img src="assets/Illustrations/rider-01.png" alt="EV Rider" class="hero-illustration">
+                        </video>
+                    </div>
+                    <div class="hero-image-container">
+                        <video autoplay muted loop playsinline class="hero-illustration" preload="auto">
+                            <source src="assets/animated/customer01.mp4" type="video/mp4">
+                <img src="assets/Illustrations/individual-01.png" alt="Individual EV User" class="hero-illustration">
+                        </video>
+                    </div>
+                </div>
+                <div class="road-lines extended"></div>
+            </div>
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    <span class="desktop-title">E-Mobility <span class="highlight-text">Made Simple</span></span>
+                    <span class="mobile-title">E-Mobility<br><span class="highlight-text">Made Simple</span></span>
+                </h1>
+                <h2 class="hero-subtitle">
+                    <span class="desktop-subtitle">Empowering businesses and individuals with reliable electric vehicle solutions.</span>
+                    <span class="mobile-subtitle">Empowering businesses and individuals with reliable electric vehicle solutions.</span>
+                </h2>
+                <p class="hero-description">Empowering businesses and individuals with reliable electric vehicle solutions.</p>
+                <div class="hero-buttons">
+                    <div class="hero-buttons-row">
+                        <a href="retail.html" class="btn btn-primary">Sales & Service</a>
+                        <a href="lmd.html" class="btn btn-secondary">Last-Mile Delivery</a>
+                </div>
+                    <div class="hero-buttons-row">
+                        <a href="about.html" class="btn btn-outline">About Us</a>
+                        <a href="contact.html" class="btn btn-outline">Contact Us</a>
+                        <a href="blog.html" class="btn btn-outline">Blog</a>
+                </div>
+            </div>
+
+                <div class="hero-footer">
+                    <p>© 2025 Ananta Mobility Pvt. Ltd. | ISO 9001:2015 Certified | Startup India Recognised</p>
+                    <p>Designed and Developed by <a href="https://www.ardnepu.com" target="_blank">ardnepu</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="js/main.js"></script>
+    <script>
+        // CTA Button Toggle Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const ctaToggle = document.getElementById('ctaToggle');
+            const ctaOptions = document.getElementById('ctaOptions');
+            const stickyCtas = document.querySelector('.sticky-ctas');
+            
+            // Toggle CTA options on click
+            ctaToggle.addEventListener('click', function() {
+                stickyCtas.classList.toggle('active');
+            });
+            
+            // Close CTA options when clicking outside
+            document.addEventListener('click', function(event) {
+                if (!stickyCtas.contains(event.target)) {
+                    stickyCtas.classList.remove('active');
+                }
+            });
+            
+            // Video loading and error handling
+            const videos = document.querySelectorAll('video');
+            
+            videos.forEach((video, index) => {
+                video.addEventListener('error', function(e) {
+                    console.error(`Video ${index + 1} error:`, e);
+                    // Fallback to image if video fails
+                    const img = video.querySelector('img');
+                    if (img) {
+                        video.style.display = 'none';
+                        img.style.display = 'block';
+                    }
+                });
+                
+                video.addEventListener('loadeddata', function() {
+                    console.log(`Video ${index + 1} loaded successfully`);
+                });
+                
+                // Try to play the video
+                video.play().catch(error => {
+                    console.log(`Video ${index + 1} autoplay failed:`, error);
+                });
+            });
+        });
+    </script>
+</body>
+</html>

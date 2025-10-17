@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - ANANTA MOBILITY</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/contact.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- ========================================
+         1. NAVIGATION (Top of page)
+         ======================================== -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">
+                <img src="assets/logos/ananta-logo.svg" alt="ANANTA MOBILITY Logo">
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link nav-home">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="retail.html" class="nav-link nav-retail">Retail</a>
+                </li>
+                <li class="nav-item">
+                    <a href="lmd.html" class="nav-link nav-lmd">Last-Mile Delivery</a>
+                </li>
+                <li class="nav-item">
+                    <a href="about.html" class="nav-link nav-about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="contact.html" class="nav-link nav-contact active">Contact</a>
+                </li>
+            </ul>
+            <div class="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ========================================
+         2. STICKY CTAs (Fixed position)
+         ======================================== -->
+    <div class="sticky-ctas">
+        <div class="cta-main-btn" id="ctaToggle">
+            <i class="fas fa-phone"></i>
+        </div>
+        <div class="cta-options" id="ctaOptions">
+            <a href="tel:+919876543210" class="cta-btn primary">Call Now</a>
+            <a href="https://wa.me/919876543210" class="cta-btn secondary">WhatsApp</a>
+        </div>
+    </div>
+
+    <!-- ========================================
+         3. MAIN CONTENT CONTAINER
+         ======================================== -->
+    <main class="seamless-content">
+        <!-- ========================================
+             4. HERO SECTION (First visible content)
+             ======================================== -->
+        <section class="hero-section">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">Get in Touch</h1>
+                    <p class="hero-subtitle">Ready to go electric? Contact us for sales, service, or partnership opportunities</p>
+                    <div class="hero-buttons">
+                        <a href="tel:+919876543210" class="btn btn-primary">Call Now</a>
+                        <a href="https://wa.me/919876543210" class="btn btn-secondary">WhatsApp</a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <img src="assets/Illustrations/contact/contact-hero.png" alt="Contact Us" class="hero-image">
+            </div>
+        </div>
+    </section>
+
+        <!-- ========================================
+             5. CONTENT BLOCKS (Main page content)
+             ======================================== -->
+        
+        <!-- Contact Form -->
+    <section class="contact-form-section">
+            <div class="contact-form-wrapper">
+                <div class="contact-form-text">
+                        <h2>Send us a Message</h2>
+                    <p>Fill out the form below and we'll get back to you within 24 hours. Our team is ready to help with all your electric mobility needs.</p>
+                    <ul class="feature-list">
+                        <li>Quick response within 24 hours</li>
+                        <li>Expert consultation for all EV needs</li>
+                        <li>Personalized solutions for your requirements</li>
+                        <li>Follow-up support after initial contact</li>
+                    </ul>
+                    </div>
+                <div class="contact-form-visual">
+                    <div class="form-container">
+                    <form class="contact-form" id="contact-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Full Name *</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address *</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="phone">Phone Number *</label>
+                                <input type="tel" id="phone" name="phone" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="reason">Reason for Contact *</label>
+                                <select id="reason" name="reason" required>
+                                    <option value="">Select a reason</option>
+                                    <option value="sales">Sales Inquiry</option>
+                                    <option value="service">Service Booking</option>
+                                    <option value="test-ride">Test Ride Booking</option>
+                                    <option value="quote">Request Quote</option>
+                                    <option value="lmd">LMD Services</option>
+                                    <option value="spares">Spare Parts Request</option>
+                                    <option value="partnership">Partnership Opportunity</option>
+                                    <option value="careers">Career Inquiry</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="company">Company Name (Optional)</label>
+                            <input type="text" id="company" name="company">
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject *</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message *</label>
+                            <textarea id="message" name="message" rows="6" required placeholder="Please provide details about your inquiry..."></textarea>
+                        </div>
+                        <div class="form-group checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="newsletter" name="newsletter">
+                                <span class="checkmark"></span>
+                                Subscribe to our newsletter for EV updates and offers
+                            </label>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-large">Send Message</button>
+                    </form>
+                </div>
+                            </div>
+                        </div>
+        </section>
+
+        <!-- Contact Information -->
+        <section class="contact-info-section">
+            <div class="contact-info-wrapper">
+                <div class="contact-info-text">
+                    <h2>Contact Information</h2>
+                    <p>Get in touch with us through multiple channels. Our dedicated team is available to assist you with all your electric mobility needs.</p>
+                    <ul class="feature-list">
+                        <li>Multiple contact channels for your convenience</li>
+                        <li>Extended office hours for better accessibility</li>
+                        <li>Quick response times for urgent inquiries</li>
+                        <li>Dedicated support for different service types</li>
+                    </ul>
+                            </div>
+                <div class="contact-info-visual">
+                    <img src="assets/Illustrations/contact/contact-info.png" alt="Contact Information" class="contact-info-image">
+            </div>
+        </div>
+    </section>
+
+        <!-- Our Locations -->
+    <section class="locations-section">
+            <div class="locations-wrapper">
+                <div class="locations-text">
+                    <h2>Our Locations</h2>
+                    <p>Visit us at any of our strategically located offices across multiple cities. Each location is equipped with modern facilities and expert staff.</p>
+                    <div class="locations-list">
+                        <div class="location-item">
+                    <div class="location-header">
+                        <h3>Hyderabad Office</h3>
+                        <p class="location-type">Head Office & Showroom</p>
+                    </div>
+                    <div class="location-details">
+                                <div class="location-detail">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>123 Tech Park, HITEC City, Hyderabad, Telangana 500081</span>
+                        </div>
+                                <div class="location-detail">
+                            <i class="fas fa-phone"></i>
+                            <span>+91 40 1234 5678</span>
+                        </div>
+                                <div class="location-detail">
+                            <i class="fas fa-clock"></i>
+                            <span>Mon-Fri: 9AM-7PM, Sat: 9AM-5PM, Sun: 10AM-4PM</span>
+                        </div>
+                    </div>
+                    <div class="location-features">
+                        <span class="feature-tag">Sales</span>
+                        <span class="feature-tag">Service</span>
+                        <span class="feature-tag">Test Rides</span>
+                    </div>
+                </div>
+                        <div class="location-item">
+                    <div class="location-header">
+                        <h3>Vijayawada Office</h3>
+                        <p class="location-type">Regional Office</p>
+                    </div>
+                    <div class="location-details">
+                                <div class="location-detail">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>456 Business District, Vijayawada, Andhra Pradesh 520001</span>
+                        </div>
+                                <div class="location-detail">
+                            <i class="fas fa-phone"></i>
+                            <span>+91 866 123 4567</span>
+                        </div>
+                                <div class="location-detail">
+                            <i class="fas fa-clock"></i>
+                            <span>Mon-Fri: 9AM-7PM, Sat: 9AM-5PM</span>
+                        </div>
+                    </div>
+                    <div class="location-features">
+                        <span class="feature-tag">Sales</span>
+                        <span class="feature-tag">Service</span>
+                        <span class="feature-tag">LMD Operations</span>
+                    </div>
+                </div>
+                        <div class="location-item">
+                    <div class="location-header">
+                        <h3>Bangalore Office</h3>
+                        <p class="location-type">Service Center</p>
+                    </div>
+                    <div class="location-details">
+                                <div class="location-detail">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>789 Industrial Area, Bangalore, Karnataka 560001</span>
+                        </div>
+                                <div class="location-detail">
+                            <i class="fas fa-phone"></i>
+                            <span>+91 80 1234 5678</span>
+                        </div>
+                                <div class="location-detail">
+                            <i class="fas fa-clock"></i>
+                            <span>Mon-Fri: 9AM-7PM, Sat: 9AM-5PM</span>
+                        </div>
+                    </div>
+                    <div class="location-features">
+                        <span class="feature-tag">Service</span>
+                        <span class="feature-tag">Spares</span>
+                        <span class="feature-tag">LMD Support</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+                <div class="locations-visual">
+                    <img src="assets/Illustrations/contact/office-locations.png" alt="Our Locations" class="locations-image">
+            </div>
+        </div>
+    </section>
+
+        <!-- Quick Contact Options -->
+    <section class="quick-contact-section">
+            <div class="quick-contact-wrapper">
+                <div class="quick-contact-text">
+                    <h2>Quick Contact Options</h2>
+                    <p>Choose the most convenient way to reach us. We offer multiple contact channels to ensure you can get in touch whenever you need assistance.</p>
+                    <ul class="feature-list">
+                        <li>Direct phone support for immediate assistance</li>
+                        <li>WhatsApp for quick messaging and file sharing</li>
+                        <li>Email support for detailed inquiries and documentation</li>
+                        <li>Appointment booking for personalized consultations</li>
+                    </ul>
+                    </div>
+                <div class="quick-contact-visual">
+                    <img src="assets/Illustrations/contact/quick-contact.png" alt="Quick Contact Options" class="quick-contact-image">
+            </div>
+        </div>
+    </section>
+
+        <!-- ========================================
+             6. CTA SECTION (Pre-footer section)
+             ======================================== -->
+        <section class="cta-section">
+            <div class="cta-content">
+                <h2>Ready to Get Started?</h2>
+                <p>Contact us today and let's discuss how we can help you with your electric mobility needs</p>
+                <div class="cta-buttons">
+                    <a href="tel:+919876543210" class="btn btn-primary btn-large">Call Now</a>
+                    <a href="https://wa.me/919876543210" class="btn btn-outline btn-large">WhatsApp</a>
+            </div>
+        </div>
+    </section>
+    </main>
+
+    <!-- ========================================
+         7. FOOTER (Bottom of page)
+         ======================================== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>ANANTA MOBILITY</h3>
+                    <p>Get in touch for all your electric mobility needs.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="retail.html">Retail</a></li>
+                        <li><a href="lmd.html">Last-Mile Delivery</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#terms">Terms</a></li>
+                        <li><a href="#privacy">Privacy</a></li>
+                        <li><a href="contact.html?reason=careers">Careers</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 EVZIP Mobility Pvt. Ltd. | ISO 9001:2015 Certified | Startup India Recognised</p>
+                <p>Designed and Developed by <a href="https://www.ardnepu.com" target="_blank">ardnepu</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ========================================
+         JAVASCRIPT FUNCTIONALITY
+         ======================================== -->
+    <script src="js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // CTA Button Toggle
+            const ctaToggle = document.getElementById('ctaToggle');
+            const stickyCtas = document.querySelector('.sticky-ctas');
+            
+            if (ctaToggle && stickyCtas) {
+                ctaToggle.addEventListener('click', function() {
+                    stickyCtas.classList.toggle('active');
+                });
+                
+                document.addEventListener('click', function(event) {
+                    if (!stickyCtas.contains(event.target)) {
+                        stickyCtas.classList.remove('active');
+                    }
+                });
+            }
+            
+            // Mobile Navigation Toggle
+            const navToggle = document.querySelector('.nav-toggle');
+            const navMenu = document.querySelector('.nav-menu');
+            
+            if (navToggle && navMenu) {
+                let isMenuOpen = false;
+                
+                function applyMobileStyles() {
+                    if (window.innerWidth <= 768) {
+                        navMenu.style.cssText = `
+                            position: fixed !important;
+                            top: 80px !important;
+                            right: 20px !important;
+                            width: 160px !important;
+                            height: 0rem !important;
+                            background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 250, 252, 0.95) 100%) !important;
+                            flex-direction: column !important;
+                            justify-content: flex-start !important;
+                            align-items: stretch !important;
+                            transition: opacity 0.3s ease, transform 0.3s ease !important;
+                            z-index: 1000 !important;
+                            backdrop-filter: blur(12px) !important;
+                            display: flex !important;
+                            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12), 0 2px 8px rgba(0, 0, 0, 0.08) !important;
+                            padding: 0.2rem 0 !important;
+                            margin: 0 !important;
+                            border-radius: 12px !important;
+                            border: 1px solid rgba(255, 255, 255, 0.2) !important;
+                            opacity: 0 !important;
+                            transform: translateY(-10px) !important;
+                        `;
+                        isMenuOpen = false;
+                    } else {
+                        navMenu.style.cssText = `
+                            position: static !important;
+                            top: auto !important;
+                            left: auto !important;
+                            width: auto !important;
+                            height: auto !important;
+                            background: transparent !important;
+                            flex-direction: row !important;
+                            justify-content: flex-end !important;
+                            align-items: center !important;
+                            transition: none !important;
+                            z-index: auto !important;
+                            backdrop-filter: none !important;
+                            display: flex !important;
+                            box-shadow: none !important;
+                            padding: 0 !important;
+                            margin: 0 !important;
+                        `;
+                        isMenuOpen = false;
+                    }
+                }
+                
+                applyMobileStyles();
+                window.addEventListener('resize', applyMobileStyles);
+                
+                navToggle.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    
+                    if (window.innerWidth <= 768) {
+                        if (isMenuOpen) {
+                            navMenu.classList.remove('active');
+                            navMenu.style.opacity = '0';
+                            navMenu.style.transform = 'translateY(-10px)';
+                            navToggle.classList.remove('active');
+                            isMenuOpen = false;
+                        } else {
+                            navMenu.classList.add('active');
+                            navMenu.style.opacity = '1';
+                            navMenu.style.transform = 'translateY(0)';
+                            navToggle.classList.add('active');
+                            isMenuOpen = true;
+                            
+                            navMenu.style.cssText = `
+                                position: fixed !important;
+                                top: 80px !important;
+                                right: 20px !important;
+                                width: 160px !important;
+                                height: auto !important;
+                                background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 250, 252, 0.95) 100%) !important;
+                                flex-direction: column !important;
+                                justify-content: flex-start !important;
+                                align-items: stretch !important;
+                                transition: opacity 0.3s ease, transform 0.3s ease !important;
+                                z-index: 1000 !important;
+                                backdrop-filter: blur(12px) !important;
+                                display: flex !important;
+                                box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12), 0 2px 8px rgba(0, 0, 0, 0.08) !important;
+                                padding: 0.2rem 0 !important;
+                                margin: 0 !important;
+                                border-radius: 12px !important;
+                                border: 1px solid rgba(255, 255, 255, 0.2) !important;
+                                opacity: 1 !important;
+                                transform: translateY(0) !important;
+                            `;
+                        }
+                    }
+                });
+                
+                // Close menu on link click
+                const navLinks = document.querySelectorAll('.nav-link');
+                navLinks.forEach(link => {
+                    link.addEventListener('click', function() {
+                        navToggle.classList.remove('active');
+                        navMenu.classList.remove('active');
+                        navMenu.style.opacity = '0';
+                        navMenu.style.transform = 'translateY(-10px)';
+                        isMenuOpen = false;
+                    });
+                });
+                
+                // Close menu on outside click
+                document.addEventListener('click', function(event) {
+                    if (!navToggle.contains(event.target) && !navMenu.contains(event.target)) {
+                        navToggle.classList.remove('active');
+                        navMenu.classList.remove('active');
+                        navMenu.style.opacity = '0';
+                        navMenu.style.transform = 'translateY(-10px)';
+                        isMenuOpen = false;
+                    }
+                });
+        }
+
+        // Form pre-filling based on URL parameters
+            const urlParams = new URLSearchParams(window.location.search);
+            const reason = urlParams.get('reason');
+            const plan = urlParams.get('plan');
+            
+            if (reason && document.querySelector('#reason')) {
+                document.querySelector('#reason').value = reason;
+            }
+            
+            if (plan && document.querySelector('#subject')) {
+                document.querySelector('#subject').value = `Quote request for ${plan} plan`;
+            }
+        });
+    </script>
+</body>
+</html>
