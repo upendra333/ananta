@@ -50,6 +50,9 @@
     margin: 0 !important;
     padding: 0 !important;
     gap: 2rem !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
 }
 
 .nav-logo img {
@@ -67,12 +70,15 @@
 
 .nav-link {
     text-decoration: none;
-    color: #64748B;
+    color: #1E293B !important;
     font-weight: 500;
     font-size: 16px;
-    transition: all 0.3s ease;
+    transition: color 0.3s ease;
     position: relative;
     padding: 8px 0;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
 }
 
 .nav-link:hover {
@@ -98,12 +104,14 @@
 .nav-retail:hover { color: #32CD32; }
 .nav-lmd:hover { color: #32CD32; }
 .nav-about:hover { color: #32CD32; }
+.nav-blog:hover { color: #32CD32; }
 .nav-contact:hover { color: #32CD32; }
 
 .nav-home.active::after { background: #32CD32; }
 .nav-retail.active::after { background: #32CD32; }
 .nav-lmd.active::after { background: #32CD32; }
 .nav-about.active::after { background: #32CD32; }
+.nav-blog.active::after { background: #32CD32; }
 .nav-contact.active::after { background: #32CD32; }
 
 .nav-toggle {
@@ -219,6 +227,42 @@
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
+.go-to-top-btn {
+    position: fixed;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    background: #64748B;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(100, 116, 139, 0.3);
+    opacity: 0;
+    z-index: 998;
+    animation: revealGoToTop 0.8s ease-out 2.5s forwards;
+}
+
+.go-to-top-btn:hover {
+    background: #475569;
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 6px 20px rgba(100, 116, 139, 0.4);
+}
+
+.go-to-top-btn i {
+    color: white;
+    font-size: 1.2rem;
+}
+
+@keyframes revealGoToTop {
+    0% { opacity: 0; transform: translateY(-50%) scale(0.8); }
+    100% { opacity: 1; transform: translateY(-50%) scale(1); }
+}
+
 /* ========================================
    3. MAIN CONTENT CONTAINER
    ======================================== */
@@ -251,12 +295,12 @@
 
 .hero-text {
     flex: 1;
-    max-width: 80%;
+    max-width: 450%;
     text-align: center;
 }
 
 .hero-title {
-    font-size: 3rem;
+    font-size: 2.5rem;
     font-weight: 700;
     color: #1E293B;
     margin: 0 0 20px 0;
@@ -264,7 +308,7 @@
 }
 
 .hero-subtitle {
-    font-size: 1.8rem;
+    font-size: 1.1rem;
     color: #64748B;
     margin: 0 0 30px 0;
     font-weight: 400;
@@ -285,10 +329,29 @@
     align-items: center;
 }
 
+.hero-visual {
+    flex: 1;
+    max-width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 12px;
+    position: relative;
+}
+
 .hero-image {
-    max-width: 80%;
+    max-width: 100%;
     height: auto;
     border-radius: 12px;
+}
+
+.hero-visual {
+    flex: 1;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* ========================================
@@ -341,8 +404,9 @@
 }
 
 .btn-large {
-    padding: 18px 40px;
-    font-size: 18px;
+    padding: 12px 30px;
+    font-size: 16px;
+    border-radius: 50px;
 }
 
 /* ========================================
@@ -394,7 +458,7 @@
 }
 
 .partnerships-text p {
-    font-size: 0.95rem;
+    font-size: 1.1rem;
     color: #64748B;
     line-height: 1.5;
     margin: 0 0 20px 0;
@@ -468,7 +532,7 @@
 }
 
 .rider-management-text p {
-    font-size: 0.95rem;
+    font-size: 1.1rem;
     color: #64748B;
     line-height: 1.5;
     margin: 0 0 20px 0;
@@ -541,7 +605,7 @@
 }
 
 .ev-fleet-text p {
-    font-size: 0.95rem;
+    font-size: 1.1rem;
     color: #64748B;
     line-height: 1.5;
     margin: 0 0 20px 0;
@@ -615,7 +679,7 @@
 }
 
 .fleet-operations-text p {
-    font-size: 0.95rem;
+    font-size: 1.1rem;
     color: #64748B;
     line-height: 1.5;
     margin: 0 0 20px 0;
@@ -688,7 +752,7 @@
 }
 
 .coverage-text p {
-    font-size: 0.95rem;
+    font-size: 1.1rem;
     color: #64748B;
     line-height: 1.5;
     margin: 0 0 20px 0;
@@ -797,7 +861,7 @@
 }
 
 .success-story-text p {
-    font-size: 0.95rem;
+    font-size: 1.1rem;
     color: #64748B;
     line-height: 1.5;
     margin: 0 0 20px 0;
@@ -877,7 +941,34 @@
 }
 
 /* ========================================
-   13. CTA SECTION (Pre-footer section)
+   13. FEATURE LISTS (Used in content blocks)
+   ======================================== */
+
+.feature-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.feature-list li {
+    padding: 12px 0;
+    color: #475569;
+    font-size: 1.1rem;
+    position: relative;
+    padding-left: 30px;
+}
+
+.feature-list li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #10B981;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+/* ========================================
+   14. CTA SECTION (Pre-footer section)
    ======================================== */
 
 .cta-section {
@@ -918,9 +1009,10 @@
    ======================================== */
 
 .footer {
-    background: #1E293B;
-    color: white;
-    padding: 60px 0 30px;
+    background: #FFFFFF;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 25px 0 15px;
+    margin-top: 0;
 }
 
 .container {
@@ -930,29 +1022,28 @@
 }
 
 .footer-content {
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr 1fr;
-    gap: 40px;
-    margin-bottom: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: grid !important;
+    grid-template-columns: 1fr 1fr 1fr !important;
+    gap: 0px !important;
+    margin-bottom: 15px;
 }
 
-.footer-section h3 {
-    font-size: 1.5rem;
-    font-weight: 700;
-    margin: 0 0 20px 0;
-    color: #3B82F6;
-}
-
+/* Footer Sections - General */
 .footer-section h4 {
-    font-size: 1.25rem;
+    font-size: 1rem;
     font-weight: 600;
-    margin: 0 0 20px 0;
+    margin: 0 0 10px 0;
+    color: #1E293B;
 }
 
 .footer-section p {
-    color: #94A3B8;
-    line-height: 1.6;
-    margin: 0;
+    color: #64748B;
+    line-height: 1.4;
+    margin: 0 0 10px 0;
+    font-size: 0.9rem;
 }
 
 .footer-section ul {
@@ -962,61 +1053,163 @@
 }
 
 .footer-section ul li {
-    margin-bottom: 10px;
+    margin-bottom: 5px;
 }
 
 .footer-section ul li a {
-    color: #94A3B8;
+    color: #64748B;
     text-decoration: none;
     transition: color 0.3s ease;
+    font-size: 0.85rem;
 }
 
 .footer-section ul li a:hover {
-    color: #3B82F6;
+    color: #32CD32;
+}
+
+/* Section 1: Company Info & Logo */
+.footer-section:nth-child(1) {
+    max-width: 250px;
+    order: 1;
+}
+
+/* Section 2: Quick Links */
+.footer-section:nth-child(2) {
+    display: flex;
+    flex-direction: column;
+    order: 2;
+}
+
+/* Section 3: Contact Info & Social */
+.footer-section:nth-child(3) {
+    order: 3;
+    justify-self: end;
+    text-align: right;
+}
+
+.footer-section:nth-child(3) h4 {
+    text-align: left;
+}
+
+.footer-section:nth-child(2) h4 {
+    text-align: center;
+    margin-bottom: 10px;
+    width: 100%;
+    align-self: center;
+    margin-left: -100px;
+}
+
+.quick-links-container {
+    display: flex !important;
+    gap: 0px !important;
+    width: 100%;
+    max-width: 200px;
+    margin: 0 auto;
+}
+
+.quick-links-left,
+.quick-links-right {
+    flex: 1 !important;
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+.quick-links-left a,
+.quick-links-right a {
+    color: #64748B;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-size: 15px;
+    margin-bottom: 2px;
+    text-align: left;
+}
+
+.quick-links-left a:hover,
+.quick-links-right a:hover {
+    color: #32CD32;
+}
+
+/* Section 3: Contact Info & Social */
+.contact-info p {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+    color: #64748B;
+    font-size: 15px;
+}
+
+.contact-info i {
+    color: #32CD32;
+    width: 16px;
+    text-align: center;
 }
 
 .social-icons {
     display: flex;
-    gap: 15px;
+    gap: 10px;
+    margin-top: 20px;
 }
 
 .social-icons a {
-    width: 40px;
-    height: 40px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-radius: 8px;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
+    color: #64748B;
     text-decoration: none;
     transition: all 0.3s ease;
+    font-size: 0.8rem;
 }
 
 .social-icons a:hover {
-    background: #3B82F6;
+    background: #32CD32;
+    color: white;
+    border-color: #32CD32;
     transform: translateY(-2px);
 }
 
+.footer-logo {
+    margin-bottom: -25px;
+}
+
+.footer-logo img {
+    height: 100px;
+    width: auto;
+}
+
+/* Footer Bottom */
 .footer-bottom {
-    border-top: 1px solid #334155;
-    padding-top: 30px;
+    border-top: 1px solid #E2E8F0;
+    padding-top: 20px;
     text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 10px;
 }
 
 .footer-bottom p {
-    color: #94A3B8;
-    margin: 0 0 10px 0;
+    color: #64748B;
+    margin: 0 0 5px 0;
+    font-size: 14px;
 }
 
 .footer-bottom a {
-    color: #3B82F6;
+    color: #32CD32;
     text-decoration: none;
+    font-weight: 400;
 }
 
 .footer-bottom a:hover {
     text-decoration: underline;
 }
+
 
 /* ========================================
    15. ANIMATIONS
@@ -1082,6 +1275,8 @@
 
     .navbar .nav-toggle {
         display: flex !important;
+        order: 3 !important;
+        margin-left: auto !important;
     }
 
     /* Hero Section */
@@ -1092,11 +1287,35 @@
     }
 
     .hero-title {
-        font-size: 2.5rem;
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .hero-subtitle {
+        font-size: 0.9rem;
+        margin-bottom: 25px;
+    }
+
+    .hero-buttons .btn {
+        width: 100%;
+        max-width: 200px;
+        padding: 10px 18px;
+        font-size: 13px;
     }
 
     .hero-buttons {
         justify-content: center;
+    }
+
+    /* Feature Lists */
+    .feature-list li {
+        padding: 8px 0;
+        font-size: 0.9rem;
+        padding-left: 25px;
+        text-align: left;
     }
 
     /* Content Blocks */
@@ -1107,9 +1326,9 @@
     .coverage-wrapper,
     .success-story-wrapper {
         flex-direction: column;
-        gap: 20px;
+        gap: 15px;
         min-height: auto;
-        text-align: center;
+        text-align: left;
     }
 
     .partnerships-text,
@@ -1129,7 +1348,18 @@
     .fleet-operations-text h2,
     .coverage-text h2,
     .success-story-text h2 {
-        font-size: 1.6rem;
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+    }
+
+    .partnerships-text p,
+    .rider-management-text p,
+    .ev-fleet-text p,
+    .fleet-operations-text p,
+    .coverage-text p,
+    .success-story-text p {
+        font-size: 0.9rem;
+        margin-bottom: 10px;
     }
 
     .partnerships-visual,
@@ -1173,7 +1403,10 @@
 
 @media (max-width: 480px) {
     .hero-title {
-        font-size: 2rem;
+        font-size: 1.3rem !important;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 
     .partnerships-text h2,
@@ -1202,5 +1435,105 @@
 
     .coverage-stats {
         grid-template-columns: 1fr;
+    }
+
+    .go-to-top-btn {
+        right: 15px;
+        width: 45px;
+        height: 45px;
+    }
+
+    .go-to-top-btn i {
+        font-size: 1rem;
+    }
+
+    /* Footer */
+    .footer-content {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+    }
+
+    .footer-section:nth-child(1) {
+        text-align: center;
+        justify-self: center;
+    }
+
+    .footer-section:nth-child(2) {
+        text-align: center;
+    }
+
+    .footer-section:nth-child(3) {
+        text-align: center;
+        justify-self: center;
+    }
+
+    .footer-section:nth-child(2) h4 {
+        margin-left: 0;
+        text-align: center;
+    }
+
+    .footer-logo {
+        text-align: center;
+    }
+
+    .footer-logo img {
+        margin: 0 auto;
+    }
+
+    .footer-section h4 {
+        text-align: center;
+    }
+
+    .footer-section p {
+        text-align: center;
+    }
+
+    .footer-section ul {
+        text-align: center;
+    }
+
+    .footer-section ul li {
+        text-align: center;
+    }
+
+    .footer-section ul li a {
+        text-align: center;
+    }
+
+    .quick-links-container {
+        text-align: center;
+        justify-items: center;
+        max-width: 150px;
+    }
+
+    .quick-links-left,
+    .quick-links-right {
+        text-align: center;
+    }
+
+    .quick-links-left ul,
+    .quick-links-right ul {
+        text-align: center;
+    }
+
+    .quick-links-left ul li,
+    .quick-links-right ul li {
+        text-align: center;
+    }
+
+    .contact-info {
+        text-align: center;
+    }
+
+    .contact-info p {
+        text-align: center;
+    }
+
+    .footer-section:nth-child(3) h4 {
+        text-align: center;
+    }
+
+    .footer-bottom p {
+        font-size: 0.7rem;
     }
 }

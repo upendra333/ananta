@@ -735,3 +735,10 @@ video.hero-illustration {
 html {
     scroll-behavior: smooth;
 }
+
+/* Hide burger menu on homepage mobile view only */
+@media (max-width: 768px) {
+    body.home .nav-toggle {
+        display: none !important;
+    }
+}
