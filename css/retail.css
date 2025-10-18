@@ -944,14 +944,14 @@
     z-index: 1;
 }
 
-.brands-wrapper {
+.brands-content {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 10px;
     text-align: center;
 }
 
-.brands-wrapper h2 {
+.brands-content h2 {
     font-size: 2rem;
     font-weight: 700;
     color: #1E293B;
