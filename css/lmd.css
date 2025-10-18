@@ -1,5 +1,6 @@
 /* ========================================
-   LMD PAGE - ORGANIZED BY VISUAL HIERARCHY
+   LMD PAGE - VISUAL HIERARCHY ORGANIZATION
+   Organized from top to bottom as they appear on page
    ======================================== */
 
 /* ========================================
@@ -21,7 +22,6 @@
     opacity: 1 !important;
 }
 
-/* Force correct navigation layout */
 .navbar .nav-container {
     max-width: 1200px !important;
     margin: 0 auto !important;
@@ -100,20 +100,6 @@
     border-radius: 2px;
 }
 
-.nav-home:hover { color: #32CD32; }
-.nav-retail:hover { color: #32CD32; }
-.nav-lmd:hover { color: #32CD32; }
-.nav-about:hover { color: #32CD32; }
-.nav-blog:hover { color: #32CD32; }
-.nav-contact:hover { color: #32CD32; }
-
-.nav-home.active::after { background: #32CD32; }
-.nav-retail.active::after { background: #32CD32; }
-.nav-lmd.active::after { background: #32CD32; }
-.nav-about.active::after { background: #32CD32; }
-.nav-blog.active::after { background: #32CD32; }
-.nav-contact.active::after { background: #32CD32; }
-
 .nav-toggle {
     display: none;
     flex-direction: column;
@@ -142,7 +128,7 @@
 }
 
 /* ========================================
-   2. STICKY CTAs (Fixed position)
+   2. STICKY CTAs (Fixed position elements)
    ======================================== */
 
 .sticky-ctas {
@@ -203,7 +189,7 @@
 .cta-btn {
     padding: 8px 16px;
     text-decoration: none;
-    border-radius: 20px;
+    border-radius: 50px;
     font-size: 0.9rem;
     font-weight: 500;
     transition: all 0.3s ease;
@@ -258,11 +244,6 @@
     font-size: 1.2rem;
 }
 
-@keyframes revealGoToTop {
-    0% { opacity: 0; transform: translateY(-50%) scale(0.8); }
-    100% { opacity: 1; transform: translateY(-50%) scale(1); }
-}
-
 /* ========================================
    3. MAIN CONTENT CONTAINER
    ======================================== */
@@ -293,14 +274,28 @@
     justify-content: space-between;
 }
 
-.hero-text {
+/* Hero Layout - Image first, then text */
+.hero-visual {
+    order: 1;
     flex: 1;
-    max-width: 450%;
+    max-width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 12px;
+    position: relative;
+}
+
+.hero-text {
+    order: 2;
+    flex: 1;
+    max-width: 50%;
     text-align: center;
 }
 
 .hero-title {
-    font-size: 2.5rem;
+    font-size: 3rem;
     font-weight: 700;
     color: #1E293B;
     margin: 0 0 20px 0;
@@ -308,7 +303,7 @@
 }
 
 .hero-subtitle {
-    font-size: 1.1rem;
+    font-size: 1.5rem;
     color: #64748B;
     margin: 0 0 30px 0;
     font-weight: 400;
@@ -321,37 +316,15 @@
     justify-content: center;
 }
 
-.hero-visual {
-    flex: 1;
-    max-width: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.hero-visual {
-    flex: 1;
-    max-width: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    border-radius: 12px;
-    position: relative;
+.hero-buttons .btn {
+    min-width: 200px;
+    text-align: center;
 }
 
 .hero-image {
-    max-width: 100%;
+    max-width: 110%;
     height: auto;
     border-radius: 12px;
-}
-
-.hero-visual {
-    flex: 1;
-    max-width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 /* ========================================
@@ -359,11 +332,11 @@
    ======================================== */
 
 .btn {
-    padding: 15px 30px;
-    border-radius: 8px;
+    padding: 10px 0px;
+    border-radius: 50px;
     text-decoration: none;
     font-weight: 600;
-    font-size: 16px;
+    font-size: 20px;
     transition: all 0.3s ease;
     border: 2px solid transparent;
     display: inline-block;
@@ -381,14 +354,14 @@
 }
 
 .btn-secondary {
-    background: #3B82F6;
+    background: #32CD32;
     color: white;
 }
 
 .btn-secondary:hover {
-    background: #2563eb;
+    background: #1e991e;
     transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(59, 130, 246, 0.3);
+    box-shadow: 0 8px 25px rgba(50, 205, 50, 0.3);
 }
 
 .btn-outline {
@@ -410,7 +383,88 @@
 }
 
 /* ========================================
-   6. PARTNERSHIPS SECTION
+   6. CONTENT SECTIONS (Main page content)
+   ======================================== */
+
+/* Common Section Styles */
+.content-section {
+    padding: 50px 0;
+    background: #FFFFFF;
+    position: relative;
+    margin-top: -20px;
+}
+
+.content-section::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 0;
+    right: 0;
+    height: 20px;
+    background: #FFFFFF;
+    z-index: 1;
+}
+
+.content-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    min-height: 50vh;
+}
+
+.content-text {
+    flex: 1;
+    max-width: 50%;
+    position: relative;
+    z-index: 3;
+}
+
+.content-text h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1E293B;
+    margin: 0 0 20px 0;
+    line-height: 1.3;
+}
+
+.content-text h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #1E293B;
+    margin: 0 0 15px 0;
+}
+
+.content-text p {
+    font-size: 1.1rem;
+    color: #64748B;
+    line-height: 1.5;
+    margin: 0 0 20px 0;
+}
+
+.content-visual {
+    flex: 1;
+    max-width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+.content-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    position: relative;
+    z-index: 2;
+}
+
+/* ========================================
+   7. KEY PARTNERSHIPS SECTION
    ======================================== */
 
 .partnerships-section {
@@ -449,21 +503,6 @@
     z-index: 3;
 }
 
-.partnerships-text h2 {
-    font-size: 2rem;
-    font-weight: 700;
-    color: #1E293B;
-    margin: 0 0 20px 0;
-    line-height: 1.3;
-}
-
-.partnerships-text p {
-    font-size: 1.1rem;
-    color: #64748B;
-    line-height: 1.5;
-    margin: 0 0 20px 0;
-}
-
 .partnerships-visual {
     flex: 1;
     max-width: 50%;
@@ -474,16 +513,29 @@
     z-index: 1;
 }
 
-.partnerships-image {
-    max-width: 100%;
+.partnership-logos {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.partnership-logo {
+    max-width: 300px;
     height: auto;
-    border-radius: 12px;
-    position: relative;
-    z-index: 2;
+    object-fit: contain;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.partnership-logo:hover {
+    transform: scale(1.05);
 }
 
 /* ========================================
-   7. RIDER MANAGEMENT SECTION
+   8. RIDER MANAGEMENT SECTION
    ======================================== */
 
 .rider-management-section {
@@ -523,21 +575,6 @@
     z-index: 3;
 }
 
-.rider-management-text h2 {
-    font-size: 2rem;
-    font-weight: 700;
-    color: #1E293B;
-    margin: 0 0 20px 0;
-    line-height: 1.3;
-}
-
-.rider-management-text p {
-    font-size: 1.1rem;
-    color: #64748B;
-    line-height: 1.5;
-    margin: 0 0 20px 0;
-}
-
 .rider-management-visual {
     flex: 1;
     max-width: 50%;
@@ -557,7 +594,7 @@
 }
 
 /* ========================================
-   8. EV FLEET SECTION
+   9. EV FLEET SECTION
    ======================================== */
 
 .ev-fleet-section {
@@ -596,21 +633,6 @@
     z-index: 3;
 }
 
-.ev-fleet-text h2 {
-    font-size: 2rem;
-    font-weight: 700;
-    color: #1E293B;
-    margin: 0 0 20px 0;
-    line-height: 1.3;
-}
-
-.ev-fleet-text p {
-    font-size: 1.1rem;
-    color: #64748B;
-    line-height: 1.5;
-    margin: 0 0 20px 0;
-}
-
 .ev-fleet-visual {
     flex: 1;
     max-width: 50%;
@@ -630,7 +652,7 @@
 }
 
 /* ========================================
-   9. FLEET OPERATIONS SECTION
+   10. FLEET OPERATIONS SECTION
    ======================================== */
 
 .fleet-operations-section {
@@ -670,21 +692,6 @@
     z-index: 3;
 }
 
-.fleet-operations-text h2 {
-    font-size: 2rem;
-    font-weight: 700;
-    color: #1E293B;
-    margin: 0 0 20px 0;
-    line-height: 1.3;
-}
-
-.fleet-operations-text p {
-    font-size: 1.1rem;
-    color: #64748B;
-    line-height: 1.5;
-    margin: 0 0 20px 0;
-}
-
 .fleet-operations-visual {
     flex: 1;
     max-width: 50%;
@@ -704,7 +711,7 @@
 }
 
 /* ========================================
-   10. COVERAGE SECTION
+   11. COVERAGE SECTION
    ======================================== */
 
 .coverage-section {
@@ -743,19 +750,22 @@
     z-index: 3;
 }
 
-.coverage-text h2 {
-    font-size: 2rem;
-    font-weight: 700;
-    color: #1E293B;
-    margin: 0 0 20px 0;
-    line-height: 1.3;
+.coverage-visual {
+    flex: 1;
+    max-width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 1;
 }
 
-.coverage-text p {
-    font-size: 1.1rem;
-    color: #64748B;
-    line-height: 1.5;
-    margin: 0 0 20px 0;
+.coverage-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    position: relative;
+    z-index: 2;
 }
 
 .coverage-stats {
@@ -786,26 +796,8 @@
     font-size: 0.9rem;
 }
 
-.coverage-visual {
-    flex: 1;
-    max-width: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    z-index: 1;
-}
-
-.coverage-image {
-    max-width: 100%;
-    height: auto;
-    border-radius: 12px;
-    position: relative;
-    z-index: 2;
-}
-
 /* ========================================
-   11. SUCCESS STORY SECTION
+   12. SUCCESS STORY SECTION
    ======================================== */
 
 .success-story-section {
@@ -845,26 +837,22 @@
     z-index: 3;
 }
 
-.success-story-text h2 {
-    font-size: 2rem;
-    font-weight: 700;
-    color: #1E293B;
-    margin: 0 0 20px 0;
-    line-height: 1.3;
+.success-story-visual {
+    flex: 1;
+    max-width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 1;
 }
 
-.success-story-text h3 {
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: #1E293B;
-    margin: 0 0 15px 0;
-}
-
-.success-story-text p {
-    font-size: 1.1rem;
-    color: #64748B;
-    line-height: 1.5;
-    margin: 0 0 20px 0;
+.success-story-image {
+    max-width: 80%;
+    height: auto;
+    border-radius: 12px;
+    position: relative;
+    z-index: 2;
 }
 
 .success-metrics {
@@ -895,7 +883,47 @@
     font-size: 0.9rem;
 }
 
-.success-story-visual {
+/* ========================================
+   13. RIDER SUCCESS SECTION
+   ======================================== */
+
+.rider-success-section {
+    padding: 50px 0;
+    background: #FFFFFF;
+    position: relative;
+    margin-top: -20px;
+}
+
+.rider-success-section::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 0;
+    right: 0;
+    height: 20px;
+    background: #FFFFFF;
+    z-index: 1;
+}
+
+.rider-success-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    min-height: 50vh;
+}
+
+.rider-success-text {
+    flex: 1;
+    max-width: 50%;
+    position: relative;
+    z-index: 3;
+}
+
+.rider-success-visual {
     flex: 1;
     max-width: 50%;
     display: flex;
@@ -905,16 +933,25 @@
     z-index: 1;
 }
 
-.success-story-image {
-    max-width: 100%;
+.rider-success-image {
+    max-width: 70%;
     height: auto;
     border-radius: 12px;
     position: relative;
     z-index: 2;
+    transform: scaleX(-1);
+}
+
+.rider-success-metrics {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 /* ========================================
-   12. FEATURE LISTS (Used in content blocks)
+   14. FEATURE LISTS (Used in content blocks)
    ======================================== */
 
 .feature-list {
@@ -941,34 +978,7 @@
 }
 
 /* ========================================
-   13. FEATURE LISTS (Used in content blocks)
-   ======================================== */
-
-.feature-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.feature-list li {
-    padding: 12px 0;
-    color: #475569;
-    font-size: 1.1rem;
-    position: relative;
-    padding-left: 30px;
-}
-
-.feature-list li::before {
-    content: '✓';
-    position: absolute;
-    left: 0;
-    color: #10B981;
-    font-weight: bold;
-    font-size: 1.2rem;
-}
-
-/* ========================================
-   14. CTA SECTION (Pre-footer section)
+   15. CTA SECTION (Pre-footer section)
    ======================================== */
 
 .cta-section {
@@ -1004,8 +1014,13 @@
     flex-wrap: wrap;
 }
 
+.cta-buttons .btn {
+    min-width: 250px;
+    text-align: center;
+}
+
 /* ========================================
-   14. FOOTER (Bottom of page)
+   16. FOOTER (Bottom of page)
    ======================================== */
 
 .footer {
@@ -1080,17 +1095,6 @@
     order: 2;
 }
 
-/* Section 3: Contact Info & Social */
-.footer-section:nth-child(3) {
-    order: 3;
-    justify-self: end;
-    text-align: right;
-}
-
-.footer-section:nth-child(3) h4 {
-    text-align: left;
-}
-
 .footer-section:nth-child(2) h4 {
     text-align: center;
     margin-bottom: 10px;
@@ -1130,6 +1134,16 @@
 }
 
 /* Section 3: Contact Info & Social */
+.footer-section:nth-child(3) {
+    order: 3;
+    justify-self: end;
+    text-align: right;
+}
+
+.footer-section:nth-child(3) h4 {
+    text-align: left;
+}
+
 .contact-info p {
     display: flex;
     align-items: center;
@@ -1210,9 +1224,8 @@
     text-decoration: underline;
 }
 
-
 /* ========================================
-   15. ANIMATIONS
+   17. ANIMATIONS
    ======================================== */
 
 @keyframes revealStickyCTA {
@@ -1226,12 +1239,17 @@
     }
 }
 
+@keyframes revealGoToTop {
+    0% { opacity: 0; transform: translateY(-50%) scale(0.8); }
+    100% { opacity: 1; transform: translateY(-50%) scale(1); }
+}
+
 /* ========================================
-   16. RESPONSIVE DESIGN
+   18. RESPONSIVE DESIGN
    ======================================== */
 
+/* Mobile Navigation */
 @media (max-width: 768px) {
-    /* Navigation - Override base styles */
     .navbar .nav-menu {
         position: fixed !important;
         top: 80px !important;
@@ -1280,34 +1298,163 @@
     }
 
     /* Hero Section */
+    .hero-section {
+        padding: 40px 0 60px 0;
+        min-height: 70vh;
+    }
+
     .hero-content {
         flex-direction: column;
-        gap: 40px;
+        gap: 50px;
         text-align: center;
+        max-width: 100%;
+        padding: 0 5px;
+        margin: 0 auto;
+    }
+
+    .hero-visual {
+        order: 1;
+        width: 100%;
+        max-width: 100%;
+        padding: 0 10px;
+    }
+
+    .hero-image {
+        transform: scale(1.2);
+        max-width: 120%;
+        width: 100%;
+    }
+
+    .hero-text {
+        order: 2;
+        width: 100%;
+        max-width: 100%;
+        padding: 0 15px;
     }
 
     .hero-title {
-        font-size: 1.5rem;
-        margin-bottom: 15px;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
+        font-size: 2.2rem;
+        margin-bottom: 20px;
+        line-height: 1.3;
     }
 
     .hero-subtitle {
-        font-size: 0.9rem;
-        margin-bottom: 25px;
+        font-size: 1.2rem;
+        margin-bottom: 30px;
+        line-height: 1.4;
     }
 
     .hero-buttons .btn {
         width: 100%;
-        max-width: 200px;
-        padding: 10px 18px;
-        font-size: 13px;
+        max-width: 250px;
+        min-width: 200px;
+        padding: 12px 20px;
+        font-size: 16px;
+        text-align: center;
     }
 
     .hero-buttons {
         justify-content: center;
+        gap: 15px;
+    }
+
+    /* Content Sections - Mobile Layout */
+    .partnerships-section,
+    .rider-management-section,
+    .ev-fleet-section,
+    .fleet-operations-section,
+    .coverage-section,
+    .success-story-section,
+    .rider-success-section {
+        padding: 30px 0;
+        margin-top: -10px;
+    }
+
+    .partnerships-wrapper,
+    .rider-management-wrapper,
+    .ev-fleet-wrapper,
+    .fleet-operations-wrapper,
+    .coverage-wrapper,
+    .success-story-wrapper,
+    .rider-success-wrapper {
+        flex-direction: column;
+        gap: 10px;
+        min-height: auto;
+        text-align: left;
+    }
+
+    .partnerships-text,
+    .rider-management-text,
+    .ev-fleet-text,
+    .fleet-operations-text,
+    .coverage-text,
+    .success-story-text,
+    .rider-success-text {
+        order: 2;
+        padding: 0 15px;
+        margin-bottom: 10px;
+        max-width: 100%;
+    }
+
+    .partnerships-text h2,
+    .rider-management-text h2,
+    .ev-fleet-text h2,
+    .fleet-operations-text h2,
+    .coverage-text h2,
+    .success-story-text h2,
+    .rider-success-text h2 {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+    }
+
+    .partnerships-text p,
+    .rider-management-text p,
+    .ev-fleet-text p,
+    .fleet-operations-text p,
+    .coverage-text p,
+    .success-story-text p,
+    .rider-success-text p {
+        font-size: 0.9rem;
+        margin-bottom: 10px;
+    }
+
+    .partnerships-visual,
+    .rider-management-visual,
+    .ev-fleet-visual,
+    .fleet-operations-visual,
+    .coverage-visual,
+    .success-story-visual,
+    .rider-success-visual {
+        order: 1;
+        padding: 0 10px;
+        max-width: 100%;
+        margin-bottom: 5px;
+    }
+
+    /* Partnership Logos */
+    .partnership-logos {
+        flex-direction: row;
+        gap: 40px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .partnership-logo {
+        max-width: 200px;
+        height: auto;
+    }
+
+    /* Stats and Metrics */
+    .coverage-stats {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .success-metrics {
+        grid-template-columns: 1fr;
+    }
+
+    .rider-success-metrics {
+        grid-template-columns: 1fr 1fr;
     }
 
     /* Feature Lists */
@@ -1318,74 +1465,41 @@
         text-align: left;
     }
 
-    /* Content Blocks */
-    .partnerships-wrapper,
-    .rider-management-wrapper,
-    .ev-fleet-wrapper,
-    .fleet-operations-wrapper,
-    .coverage-wrapper,
-    .success-story-wrapper {
-        flex-direction: column;
-        gap: 15px;
-        min-height: auto;
-        text-align: left;
-    }
-
-    .partnerships-text,
-    .rider-management-text,
-    .ev-fleet-text,
-    .fleet-operations-text,
-    .coverage-text,
-    .success-story-text {
-        padding: 0 20px;
-        margin-bottom: 20px;
-        max-width: 100%;
-    }
-
-    .partnerships-text h2,
-    .rider-management-text h2,
-    .ev-fleet-text h2,
-    .fleet-operations-text h2,
-    .coverage-text h2,
-    .success-story-text h2 {
-        font-size: 1.5rem;
-        margin-bottom: 10px;
-    }
-
-    .partnerships-text p,
-    .rider-management-text p,
-    .ev-fleet-text p,
-    .fleet-operations-text p,
-    .coverage-text p,
-    .success-story-text p {
-        font-size: 0.9rem;
-        margin-bottom: 10px;
-    }
-
-    .partnerships-visual,
-    .rider-management-visual,
-    .ev-fleet-visual,
-    .fleet-operations-visual,
-    .coverage-visual,
-    .success-story-visual {
-        padding: 0 20px;
-        max-width: 100%;
-    }
-
-    /* Coverage Stats */
-    .coverage-stats {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .success-metrics {
-        grid-template-columns: 1fr;
-    }
-
     /* Footer */
     .footer-content {
         grid-template-columns: 1fr;
         gap: 30px;
         text-align: center;
+    }
+
+    .footer-section:nth-child(2) h4 {
+        margin-left: 0;
+        text-align: center;
+    }
+
+    .quick-links-container {
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+        max-width: 200px;
+    }
+
+    .quick-links-left,
+    .quick-links-right {
+        text-align: center;
+        align-items: center;
+    }
+
+    .quick-links-left a,
+    .quick-links-right a {
+        text-align: center;
+    }
+
+    /* CTA Section */
+    .cta-section {
+        padding: 30px 0;
+        margin-top: -10px;
     }
 
     /* CTA Buttons */
@@ -1401,12 +1515,91 @@
     }
 }
 
+/* Desktop Layout Reset */
+@media (min-width: 769px) {
+    .partnerships-text,
+    .rider-management-text,
+    .ev-fleet-text,
+    .fleet-operations-text,
+    .coverage-text,
+    .success-story-text,
+    .rider-success-text {
+        order: unset;
+    }
+
+    .partnerships-visual,
+    .rider-management-visual,
+    .ev-fleet-visual,
+    .fleet-operations-visual,
+    .coverage-visual,
+    .success-story-visual,
+    .rider-success-visual {
+        order: unset;
+    }
+}
+
+/* Small Mobile Devices */
 @media (max-width: 480px) {
+    .hero-section {
+        padding: 30px 0 40px 0;
+        min-height: 65vh;
+    }
+
     .hero-title {
-        font-size: 1.3rem !important;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
+        font-size: 1.8rem !important;
+        margin-bottom: 15px;
+        line-height: 1.2;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem !important;
+        margin-bottom: 25px;
+        line-height: 1.3;
+    }
+
+    .hero-buttons .btn {
+        max-width: 220px;
+        min-width: 180px;
+        padding: 10px 18px;
+        font-size: 14px;
+    }
+
+    .hero-content {
+        padding: 0 2px;
+        max-width: 100%;
+    }
+
+    .hero-visual {
+        padding: 0 5px;
+        width: 100%;
+    }
+
+    .hero-image {
+        transform: scale(1);
+        max-width: 130%;
+        width: 100%;
+    }
+
+    .hero-text {
+        padding: 0 10px;
+        width: 100%;
+    }
+
+    /* Further reduce spacing for small mobile */
+    .partnerships-section,
+    .rider-management-section,
+    .ev-fleet-section,
+    .fleet-operations-section,
+    .coverage-section,
+    .success-story-section,
+    .rider-success-section {
+        padding: 20px 0;
+        margin-top: -15px;
+    }
+
+    .cta-section {
+        padding: 20px 0;
+        margin-top: -15px;
     }
 
     .partnerships-text h2,
@@ -1462,14 +1655,53 @@
         text-align: center;
     }
 
+    .footer-section:nth-child(2) h4 {
+        text-align: center;
+        margin-left: 0;
+    }
+
+    .quick-links-container {
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+    }
+
+    .quick-links-left,
+    .quick-links-right {
+        text-align: center;
+        align-items: center;
+    }
+
+    .quick-links-left a,
+    .quick-links-right a {
+        text-align: center;
+    }
+
     .footer-section:nth-child(3) {
         text-align: center;
         justify-self: center;
     }
 
-    .footer-section:nth-child(2) h4 {
-        margin-left: 0;
+    .footer-section:nth-child(3) h4 {
         text-align: center;
+    }
+
+    .contact-info {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .contact-info p {
+        text-align: center;
+        justify-content: center;
+    }
+
+    .social-icons {
+        justify-content: center;
     }
 
     .footer-logo {
@@ -1497,39 +1729,6 @@
     }
 
     .footer-section ul li a {
-        text-align: center;
-    }
-
-    .quick-links-container {
-        text-align: center;
-        justify-items: center;
-        max-width: 150px;
-    }
-
-    .quick-links-left,
-    .quick-links-right {
-        text-align: center;
-    }
-
-    .quick-links-left ul,
-    .quick-links-right ul {
-        text-align: center;
-    }
-
-    .quick-links-left ul li,
-    .quick-links-right ul li {
-        text-align: center;
-    }
-
-    .contact-info {
-        text-align: center;
-    }
-
-    .contact-info p {
-        text-align: center;
-    }
-
-    .footer-section:nth-child(3) h4 {
         text-align: center;
     }
 
