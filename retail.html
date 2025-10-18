@@ -247,15 +247,15 @@
                     <div class="brand-card">
                         <img src="assets/logos/hestur.png" alt="Hestur Logo" class="brand-logo">
                         <h3>Hestur</h3>
-                        <p class="brand-tag">Exclusive</p>
-                        <p>Ananta is the exclusive Master Franchise holder for Andhra Pradesh for the brand Hestur. We operate a dedicated Hestur showroom in Guntur for sales & service built to factory standards, stocked with genuine spares, and run by trained technicians.</p>
-                        <div class="brand-gallery">
-                            <img src="assets/gallery/hestur/Hestur-01.jpeg" alt="Hestur Showroom">
-                            <img src="assets/gallery/hestur/Hestur-02.jpeg" alt="Hestur Showroom">
-                            <img src="assets/gallery/hestur/Hestur-03.jpeg" alt="Hestur Showroom">
-                            <img src="assets/gallery/hestur/Hestur-04.jpeg" alt="Hestur Showroom">
-                            <img src="assets/gallery/hestur/Hestur-05.jpeg" alt="Hestur Showroom">
-                            <img src="assets/gallery/hestur/Hestur-06.jpeg" alt="Hestur Showroom">
+                        <p class="brand-tag">Exclusive Showroom</p>
+                        <p>Ananta is Hestur's exclusive Master Franchise holder for Andhra Pradesh and operates a dedicated showroom in Guntur for sales & service and run by trained technicians.</p>
+                        <div class="brand-gallery" data-brand="hestur">
+                            <img src="assets/gallery/hestur/Hestur-01.jpeg" alt="Hestur Showroom" class="gallery-image" data-index="0">
+                            <img src="assets/gallery/hestur/Hestur-02.jpeg" alt="Hestur Showroom" class="gallery-image" data-index="1">
+                            <img src="assets/gallery/hestur/Hestur-03.jpeg" alt="Hestur Showroom" class="gallery-image" data-index="2">
+                            <img src="assets/gallery/hestur/Hestur-04.jpeg" alt="Hestur Showroom" class="gallery-image" data-index="3">
+                            <img src="assets/gallery/hestur/Hestur-05.jpeg" alt="Hestur Showroom" class="gallery-image" data-index="4">
+                            <img src="assets/gallery/hestur/Hestur-06.jpeg" alt="Hestur Showroom" class="gallery-image" data-index="5">
                         </div>
                     </div>
                     <div class="brand-card">
@@ -263,13 +263,13 @@
                         <h3>Bikewo</h3>
                         <p class="brand-tag">Multi-brand EV Showrooms</p>
                         <p>Ananta has partnered with Bikewo, India's multi-brand EV showroom network, to bring you a curated line-up of reliable electric two-wheelers across price points and use cases.</p>
-                        <div class="brand-gallery">
-                            <img src="assets/gallery/bikewo/mysuru-1.jpg" alt="Bikewo Mysuru Showroom">
-                            <img src="assets/gallery/bikewo/guntur03.jpg" alt="Bikewo Guntur Showroom">
-                            <img src="assets/gallery/bikewo/guntur04.jpg" alt="Bikewo Guntur Showroom">
-                            <img src="assets/gallery/bikewo/guntur05.jpg" alt="Bikewo Guntur Showroom">
-                            <img src="assets/gallery/bikewo/mysuru-ananta-2.jpg" alt="Bikewo Mysuru Ananta">
-                            <img src="assets/gallery/bikewo/mysuru-ananta-5.jpg" alt="Bikewo Mysuru Ananta">
+                        <div class="brand-gallery" data-brand="bikewo">
+                            <img src="assets/gallery/bikewo/mysuru-1.jpg" alt="Bikewo Mysuru Showroom" class="gallery-image" data-index="0">
+                            <img src="assets/gallery/bikewo/guntur03.jpg" alt="Bikewo Guntur Showroom" class="gallery-image" data-index="1">
+                            <img src="assets/gallery/bikewo/guntur04.jpg" alt="Bikewo Guntur Showroom" class="gallery-image" data-index="2">
+                            <img src="assets/gallery/bikewo/guntur05.jpg" alt="Bikewo Guntur Showroom" class="gallery-image" data-index="3">
+                            <img src="assets/gallery/bikewo/mysuru-ananta-2.jpg" alt="Bikewo Mysuru Ananta" class="gallery-image" data-index="4">
+                            <img src="assets/gallery/bikewo/mysuru-ananta-5.jpg" alt="Bikewo Mysuru Ananta" class="gallery-image" data-index="5">
                         </div>
                     </div>
                 </div>
@@ -338,6 +338,23 @@
             <p>Designed and Developed by <a href="https://www.ardnepu.com" target="_blank">ardnepu</a></p>
         </div>
     </footer>
+
+    <!-- ========================================
+         IMAGE MODAL
+         ======================================== -->
+    <div id="imageModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <img id="modalImage" src="" alt="">
+            <div class="modal-navigation">
+                <button id="prevBtn" class="nav-btn prev-btn">&larr;</button>
+                <button id="nextBtn" class="nav-btn next-btn">&rarr;</button>
+            </div>
+            <div class="modal-counter">
+                <span id="currentImage">1</span> / <span id="totalImages">6</span>
+            </div>
+        </div>
+    </div>
 
     <!-- ========================================
          JAVASCRIPT FUNCTIONALITY
@@ -497,6 +514,96 @@
                     }
                 });
             }
+            
+            // Image Modal Functionality
+            const modal = document.getElementById('imageModal');
+            const modalImage = document.getElementById('modalImage');
+            const currentImageSpan = document.getElementById('currentImage');
+            const totalImagesSpan = document.getElementById('totalImages');
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            const closeBtn = document.querySelector('.close');
+            
+            let currentGallery = null;
+            let currentIndex = 0;
+            let currentImages = [];
+            
+            // Add click event listeners to all gallery images
+            const galleryImages = document.querySelectorAll('.gallery-image');
+            galleryImages.forEach(img => {
+                img.addEventListener('click', function() {
+                    const gallery = this.closest('.brand-gallery');
+                    const brand = gallery.getAttribute('data-brand');
+                    const index = parseInt(this.getAttribute('data-index'));
+                    
+                    openModal(brand, index);
+                });
+            });
+            
+            function openModal(brand, index) {
+                currentGallery = brand;
+                currentIndex = index;
+                
+                // Get all images for the current brand
+                const gallery = document.querySelector(`[data-brand="${brand}"]`);
+                currentImages = Array.from(gallery.querySelectorAll('.gallery-image'));
+                
+                // Update modal content
+                modalImage.src = currentImages[index].src;
+                modalImage.alt = currentImages[index].alt;
+                currentImageSpan.textContent = index + 1;
+                totalImagesSpan.textContent = currentImages.length;
+                
+                // Show modal
+                modal.style.display = 'block';
+                document.body.style.overflow = 'hidden';
+            }
+            
+            function closeModal() {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+            
+            function showNextImage() {
+                currentIndex = (currentIndex + 1) % currentImages.length;
+                updateModalImage();
+            }
+            
+            function showPrevImage() {
+                currentIndex = (currentIndex - 1 + currentImages.length) % currentImages.length;
+                updateModalImage();
+            }
+            
+            function updateModalImage() {
+                modalImage.src = currentImages[currentIndex].src;
+                modalImage.alt = currentImages[currentIndex].alt;
+                currentImageSpan.textContent = currentIndex + 1;
+            }
+            
+            // Event listeners
+            closeBtn.addEventListener('click', closeModal);
+            nextBtn.addEventListener('click', showNextImage);
+            prevBtn.addEventListener('click', showPrevImage);
+            
+            // Close modal when clicking outside the image
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    closeModal();
+                }
+            });
+            
+            // Keyboard navigation
+            document.addEventListener('keydown', function(e) {
+                if (modal.style.display === 'block') {
+                    if (e.key === 'Escape') {
+                        closeModal();
+                    } else if (e.key === 'ArrowRight') {
+                        showNextImage();
+                    } else if (e.key === 'ArrowLeft') {
+                        showPrevImage();
+                    }
+                }
+            });
         });
     </script>
 </body>
