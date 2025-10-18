@@ -587,15 +587,16 @@
     margin: 0 auto;
     padding: 0 10px;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-    gap: 20px;
+    justify-content: center;
+    gap: 40px;
     min-height: 50vh;
+    text-align: center;
 }
 
 .locations-text {
-    flex: 1;
-    max-width: 50%;
+    max-width: 800px;
     position: relative;
     z-index: 3;
 }
@@ -615,11 +616,13 @@
     margin: 0 0 20px 0;
 }
 
-.locations-list {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    margin-top: 20px;
+.locations-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
 .location-item {
@@ -634,6 +637,39 @@
     transform: translateY(-2px);
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
     background: white;
+}
+
+/* Coming Soon Location Card */
+.location-item.coming-soon {
+    background: #F1F5F9;
+    border: 2px dashed #94A3B8;
+    opacity: 0.8;
+}
+
+.location-item.coming-soon:hover {
+    transform: none;
+    box-shadow: none;
+    background: #F1F5F9;
+}
+
+.location-item.coming-soon .location-header h3 {
+    color: #64748B;
+}
+
+.location-item.coming-soon .location-type {
+    color: #F59E0B;
+    font-weight: 600;
+}
+
+.location-item.coming-soon .location-detail span {
+    color: #94A3B8;
+    font-style: italic;
+}
+
+.coming-soon-tag {
+    background: #F59E0B !important;
+    color: white !important;
+    font-weight: 600 !important;
 }
 
 .location-header h3 {
@@ -852,11 +888,6 @@
     padding: 60px 0 30px;
 }
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
 
 .footer-content {
     display: grid;
@@ -1037,6 +1068,13 @@
         gap: 20px;
         min-height: auto;
         text-align: center;
+    }
+
+    /* Locations Grid - Mobile */
+    .locations-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        max-width: 400px;
     }
 
     .contact-form-text,

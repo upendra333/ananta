@@ -411,7 +411,7 @@
 }
 
 .story-image {
-    max-width: 100%;
+    max-width: 90%;
     height: auto;
     border-radius: 12px;
     position: relative;
@@ -485,7 +485,7 @@
 }
 
 .values-image {
-    max-width: 100%;
+    max-width: 90%;
     height: auto;
     border-radius: 12px;
     position: relative;
@@ -634,16 +634,16 @@
     margin: 0 auto;
     padding: 0 10px;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-    gap: 20px;
+    justify-content: center;
+    gap: 40px;
     min-height: 50vh;
-    flex-direction: row-reverse;
+    text-align: center;
 }
 
 .leadership-text {
-    flex: 1;
-    max-width: 50%;
+    max-width: 800px;
     position: relative;
     z-index: 3;
 }
@@ -664,8 +664,7 @@
 }
 
 .leadership-visual {
-    flex: 1;
-    max-width: 50%;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -679,6 +678,53 @@
     border-radius: 12px;
     position: relative;
     z-index: 2;
+}
+
+/* Founders Grid */
+.founders-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.founder-card {
+    text-align: center;
+    background: #F8FAFC;
+    padding: 50px;
+    border-radius: 12px;
+    border: 1px solid #E2E8F0;
+    transition: all 0.3s ease;
+}
+
+.founder-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.founder-image {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 20px auto;
+    border: 3px solid #32CD32;
+}
+
+.founder-name {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #1E293B;
+    margin: 0 0 8px 0;
+}
+
+.founder-designation {
+    font-size: 1.1rem;
+    color: #64748B;
+    margin: 0;
+    font-weight: 500;
 }
 
 /* ========================================
@@ -909,11 +955,6 @@
     padding: 60px 0 30px;
 }
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
 
 .footer-content {
     display: grid;
@@ -1141,6 +1182,18 @@
 
     .milestone-year {
         min-width: auto;
+    }
+
+    /* Founders Grid - Mobile */
+    .founders-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        max-width: 300px;
+    }
+
+    .founder-image {
+        width: 130px;
+        height: 130px;
     }
 
     /* Footer */
